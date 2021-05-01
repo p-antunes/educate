@@ -16,13 +16,15 @@ public class VideoRight {
     @NotBlank(message = "Can't be blank")
     private String link_video;
 
-    public VideoRight(String link_video) {
-        this.id_video = id_video;
-        this.link_video = link_video;
-    }
+
 
     public VideoRight() {
 
+    }
+
+    public VideoRight(@NotBlank(message = "Can't be blank") Long id_video, @NotBlank(message = "Can't be blank") String link_video) {
+        this.id_video = id_video;
+        this.link_video = link_video;
     }
 
     public Long getId_video() {

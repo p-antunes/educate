@@ -41,9 +41,9 @@ public class Teenager {
 
     @ManyToOne
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
-    private login login;
+    private Login login;
 
-    public Teenager(Long idTeenager, @NotBlank(message = "Can't be blank") String name, Date birth_date, String phoneNr, String city, String county, String postalCode, String address, String school, login login) {
+    public Teenager(Long idTeenager, @NotBlank(message = "Can't be blank") String name, Date birth_date, String phoneNr, String city, String county, String postalCode, String address, String school, Login login) {
         this.idTeenager = idTeenager;
         this.name = name;
         this.birth_date = birth_date;
@@ -131,11 +131,11 @@ public class Teenager {
         this.school = school;
     }
 
-    public login getLogin() {
+    public Login getLogin() {
         return login;
     }
 
-    public void setLogin(login login) {
+    public void setLogin(Login login) {
         this.login = login;
     }
 }

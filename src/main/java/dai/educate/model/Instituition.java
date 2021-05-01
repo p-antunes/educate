@@ -35,9 +35,9 @@ public class Instituition {
 
     @ManyToOne
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
-    private login login;
+    private Login login;
 
-    public Instituition(@NotBlank(message = "Can't be blank") int idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, login login) {
+    public Instituition(@NotBlank(message = "Can't be blank") int idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, Login login) {
         this.idInstitution = idInstitution;
         this.name = name;
         this.phoneNr = phoneNr;
@@ -107,11 +107,11 @@ public class Instituition {
         this.address = address;
     }
 
-    public login getLogin() {
+    public Login getLogin() {
         return login;
     }
 
-    public void setLogin(login login) {
+    public void setLogin(Login login) {
         this.login = login;
     }
 }

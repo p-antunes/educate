@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
+
 @Entity(name = "child")
 @Table(name="child")
 
@@ -38,9 +39,9 @@ public class Child {
 
     @ManyToOne
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
-    private login login;
+    private Login login;
 
-    public Child(int idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, login login) {
+    public Child(int idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, Login login) {
         this.idChild = idChild;
         this.name = name;
         this.birthDate = birthDate;
@@ -119,12 +120,12 @@ public class Child {
         this.school = school;
     }
 
-    public login getLogin() {
+    public Login getLogin() {
         return login;
     }
 
-    public void setLogin(login login) {
+    public void setLogin(Login login) {
         this.login = login;
     }
 
-
+}

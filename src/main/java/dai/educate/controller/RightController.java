@@ -1,7 +1,7 @@
 package dai.educate.controller;
 
 import dai.educate.model.Rights;
-import dai.educate.payload.resonse.ApiResponse;
+import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.RightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,11 +31,10 @@ public class RightController {
     public ResponseEntity<ApiResponse> saveRight(@RequestBody Rights right) {
         try {
             // Activity Attributes
-            long idRight = right.getId_right();
             String Right = right.getRights();
 
             // Create Right
-            Rights newRight = new Rights(idRight, Right);
+            Rights newRight = new Rights(null, Right);
             rightRepository.save(newRight);
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right created"),

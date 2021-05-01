@@ -1,9 +1,8 @@
 package dai.educate.controller;
 
-import dai.educate.model.Rights;
 import dai.educate.model.VideoRight;
 
-import dai.educate.payload.resonse.ApiResponse;
+import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.VideoRightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

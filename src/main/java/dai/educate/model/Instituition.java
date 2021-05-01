@@ -2,24 +2,24 @@ package dai.educate.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.Date;
 
-@Entity(name = "child")
-@Table(name="child")
+@Entity(name = "institution")
+@Table(name="institution")
 
-public class Child {
+public class Instituition {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_child")
-    private int idChild;
+    @NotBlank(message = "Can't be blank")
+    @Column(name = "id_institution")
+    private int idInstitution;
 
     @NotBlank(message = "Can't be blank")
     @Column(name = "name")
     private String name;
 
-    @Column(name = "birth_date")
-    private Date birthDate;
+    @Column(name = "phone_nr")
+    private String phoneNr;
 
     @Column(name = "city")
     private String city;
@@ -33,34 +33,30 @@ public class Child {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "school")
-    private String school;
-
     @ManyToOne
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
     private login login;
 
-    public Child(int idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, login login) {
-        this.idChild = idChild;
+    public Instituition(@NotBlank(message = "Can't be blank") int idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, login login) {
+        this.idInstitution = idInstitution;
         this.name = name;
-        this.birthDate = birthDate;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
         this.address = address;
-        this.school = school;
         this.login = login;
     }
 
-    public Child() {
+    public Instituition() {
     }
 
-    public int getIdChild() {
-        return idChild;
+    public int getIdInstitution() {
+        return idInstitution;
     }
 
-    public void setIdChild(int idChild) {
-        this.idChild = idChild;
+    public void setIdInstitution(int idInstitution) {
+        this.idInstitution = idInstitution;
     }
 
     public String getName() {
@@ -71,12 +67,12 @@ public class Child {
         this.name = name;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public String getPhoneNr() {
+        return phoneNr;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public String getCity() {
@@ -111,14 +107,6 @@ public class Child {
         this.address = address;
     }
 
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
     public login getLogin() {
         return login;
     }
@@ -126,5 +114,4 @@ public class Child {
     public void setLogin(login login) {
         this.login = login;
     }
-
-
+}

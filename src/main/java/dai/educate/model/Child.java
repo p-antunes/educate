@@ -12,8 +12,8 @@ public class Child {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_child")
-    private int idChild;
+    @Column(name = "idChild")
+    private Long idChild;
 
     @NotBlank(message = "Can't be blank")
     @Column(name = "name")
@@ -41,7 +41,7 @@ public class Child {
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
     private Login login;
 
-    public Child(int idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, Login login) {
+    public Child(Long idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, Login login) {
         this.idChild = idChild;
         this.name = name;
         this.birthDate = birthDate;
@@ -56,11 +56,11 @@ public class Child {
     public Child() {
     }
 
-    public int getIdChild() {
+    public Long getIdChild() {
         return idChild;
     }
 
-    public void setIdChild(int idChild) {
+    public void setIdChild(Long idChild) {
         this.idChild = idChild;
     }
 

@@ -11,7 +11,7 @@ public class Teenager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_teenager")
+    @Column(name = "idTeenager")
     private Long idTeenager;
 
     @NotBlank(message = "Can't be blank")

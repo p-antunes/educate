@@ -6,13 +6,13 @@ import javax.validation.constraints.NotBlank;
 @Entity(name = "institution")
 @Table(name="institution")
 
-public class Instituition {
+public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "Can't be blank")
     @Column(name = "id_institution")
-    private int idInstitution;
+    private Long idInstitution;
 
     @NotBlank(message = "Can't be blank")
     @Column(name = "name")
@@ -37,7 +37,7 @@ public class Instituition {
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
     private Login login;
 
-    public Instituition(@NotBlank(message = "Can't be blank") int idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, Login login) {
+    public Institution(@NotBlank(message = "Can't be blank") Long idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, Login login) {
         this.idInstitution = idInstitution;
         this.name = name;
         this.phoneNr = phoneNr;
@@ -48,14 +48,14 @@ public class Instituition {
         this.login = login;
     }
 
-    public Instituition() {
+    public Institution() {
     }
 
-    public int getIdInstitution() {
+    public Long getIdInstitution() {
         return idInstitution;
     }
 
-    public void setIdInstitution(int idInstitution) {
+    public void setIdInstitution(Long idInstitution) {
         this.idInstitution = idInstitution;
     }
 

@@ -1,25 +1,28 @@
 package dai.educate.model;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-@Entity(name = "child")
-@Table(name="child")
-
-public class Child {
+@Entity(name = "teenager")
+@Table(name="teenager")
+public class Teenager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_child")
-    private int idChild;
+    @Column(name = "id_teenager")
+    private Long idTeenager;
 
     @NotBlank(message = "Can't be blank")
     @Column(name = "name")
     private String name;
 
     @Column(name = "birth_date")
-    private Date birthDate;
+    private Date birth_date;
+
+    @Column(name = "phone_nr")
+    private String phoneNr;
 
     @Column(name = "city")
     private String city;
@@ -40,10 +43,11 @@ public class Child {
     @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
     private login login;
 
-    public Child(int idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, login login) {
-        this.idChild = idChild;
+    public Teenager(Long idTeenager, @NotBlank(message = "Can't be blank") String name, Date birth_date, String phoneNr, String city, String county, String postalCode, String address, String school, login login) {
+        this.idTeenager = idTeenager;
         this.name = name;
-        this.birthDate = birthDate;
+        this.birth_date = birth_date;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
@@ -52,15 +56,15 @@ public class Child {
         this.login = login;
     }
 
-    public Child() {
+    public Teenager() {
     }
 
-    public int getIdChild() {
-        return idChild;
+    public Long getIdTeenager() {
+        return idTeenager;
     }
 
-    public void setIdChild(int idChild) {
-        this.idChild = idChild;
+    public void setIdTeenager(Long idTeenager) {
+        this.idTeenager = idTeenager;
     }
 
     public String getName() {
@@ -71,12 +75,20 @@ public class Child {
         this.name = name;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Date getBirth_date() {
+        return birth_date;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setBirth_date(Date birth_date) {
+        this.birth_date = birth_date;
+    }
+
+    public String getPhoneNr() {
+        return phoneNr;
+    }
+
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public String getCity() {
@@ -126,5 +138,4 @@ public class Child {
     public void setLogin(login login) {
         this.login = login;
     }
-
-
+}

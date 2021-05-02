@@ -5,6 +5,7 @@ import dai.educate.model.Institution;
 import dai.educate.model.Login;
 import dai.educate.model.Teenager;
 import dai.educate.repository.ChildRepository;
+import dai.educate.repository.InstitutionRepository;
 import dai.educate.repository.LoginRepository;
 
 import dai.educate.repository.TeenagerRepository;
@@ -28,6 +29,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     TeenagerRepository teenagerRepository;
 
+    @Autowired
+    InstitutionRepository institutionRepository;
+
 
     @Override
     @Transactional
@@ -43,6 +47,10 @@ public class CustomUserDetailsService implements UserDetailsService {
             if (user.getRole().getIdRole() == 1) {
                 Teenager teenager = teenagerRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(teenager.getIdTeenager(), user.getEmail(), user.getPassword(), user.getRole().getName().name());
+            }
+            if (user.getRole().getIdRole()==2){
+                Institution institution = institutionRepository.findDistinctByLogin(user);
+                return  UserPrincipal.create(institution.getIdInstitution(),user.getEmail(), user.getPassword(), user.getRole().getName().name());
             } else {
                 Child child = childRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(child.getIdChild(), user.getEmail(), user.getPassword(), user.getRole().getName().name());
@@ -68,6 +76,10 @@ public class CustomUserDetailsService implements UserDetailsService {
             if (user.getRole().getIdRole() == 1) {
                 Teenager teenager = teenagerRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(teenager.getIdTeenager(), user.getEmail(), user.getPassword(), user.getRole().getName().name());
+            }
+            if (user.getRole().getIdRole()==2){
+                Institution institution = institutionRepository.findDistinctByLogin(user);
+                return  UserPrincipal.create(institution.getIdInstitution(),user.getEmail(), user.getPassword(), user.getRole().getName().name());
             } else {
                 Child child = childRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(child.getIdChild(), user.getEmail(), user.getPassword(), user.getRole().getName().name());
@@ -89,6 +101,10 @@ public class CustomUserDetailsService implements UserDetailsService {
             if (user.getRole().getIdRole() == 1) {
                 Teenager teenager = teenagerRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(teenager.getIdTeenager(), user.getEmail(), user.getPassword(), user.getRole().getName().name());
+            }
+            if (user.getRole().getIdRole()==2){
+                Institution institution = institutionRepository.findDistinctByLogin(user);
+                return  UserPrincipal.create(institution.getIdInstitution(),user.getEmail(), user.getPassword(), user.getRole().getName().name());
             } else {
                 Child child = childRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(child.getIdChild(), user.getEmail(), user.getPassword(), user.getRole().getName().name());

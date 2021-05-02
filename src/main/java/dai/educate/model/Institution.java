@@ -11,14 +11,14 @@ public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "Can't be blank")
-    @Column(name = "id_institution")
+    @Column(name = "idInstitution")
     private Long idInstitution;
 
     @NotBlank(message = "Can't be blank")
     @Column(name = "name")
     private String name;
 
-    @Column(name = "phone_nr")
+    @Column(name = "phoneNr")
     private String phoneNr;
 
     @Column(name = "city")
@@ -27,14 +27,14 @@ public class Institution {
     @Column(name = "county")
     private String county;
 
-    @Column(name = "postal_code")
+    @Column(name = "postalCode")
     private String postalCode;
 
     @Column(name = "address")
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
+    @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
     public Institution(@NotBlank(message = "Can't be blank") Long idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, Login login) {

@@ -3,43 +3,44 @@ package dai.educate.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Entity(name = "video_right")
-@Table(name = "video_right")
+@Entity(name = "videoRight")
+@Table(name = "videoRight")
 
 public class VideoRight {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "Can't be blank")
-    private Long id_video;
+    @Column(name = "idVideo")
+    private Long idVideo;
 
     @NotBlank(message = "Can't be blank")
-    private String link_video;
+    @Column(name = "linkVideo")
+    private String linkVideo;
 
-
+    public VideoRight(@NotBlank(message = "Can't be blank") Long idVideo, @NotBlank(message = "Can't be blank") String linkVideo) {
+        this.idVideo = idVideo;
+        this.linkVideo = linkVideo;
+    }
 
     public VideoRight() {
-
     }
 
-    public VideoRight(@NotBlank(message = "Can't be blank") Long id_video, @NotBlank(message = "Can't be blank") String link_video) {
-        this.id_video = id_video;
-        this.link_video = link_video;
+    public Long getIdVideo() {
+        return idVideo;
     }
 
-    public Long getId_video() {
-        return id_video;
+    public void setIdVideo(Long idVideo) {
+        this.idVideo = idVideo;
     }
 
-    public void setId_video(Long id_video) {
-        this.id_video = id_video;
+    public String getLinkVideo() {
+        return linkVideo;
     }
 
-    public String getLink_video() {
-        return link_video;
-    }
-
-    public void setLink_video(String link_video) {
-        this.link_video = link_video;
+    public void setLinkVideo(String linkVideo) {
+        this.linkVideo = linkVideo;
     }
 }
+
+

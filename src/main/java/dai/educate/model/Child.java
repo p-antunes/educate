@@ -19,7 +19,7 @@ public class Child {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "birth_date")
+    @Column(name = "birthDate")
     private Date birthDate;
 
     @Column(name = "city")
@@ -28,7 +28,7 @@ public class Child {
     @Column(name = "county")
     private String county;
 
-    @Column(name = "postal_code")
+    @Column(name = "postalCode")
     private String postalCode;
 
     @Column(name = "address")
@@ -38,7 +38,7 @@ public class Child {
     private String school;
 
     @ManyToOne
-    @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
+    @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
     public Child(Long idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, Login login) {
@@ -127,5 +127,4 @@ public class Child {
     public void setLogin(Login login) {
         this.login = login;
     }
-
 }

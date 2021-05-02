@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LoginRepository extends JpaRepository<Login, Long> {
-    Login findDistinctByIdLogin(long id_login);
+    Login findDistinctByIdLogin(long idLogin);
 
     @Override
     Optional<Login> findById(Long aLong);
@@ -25,10 +25,10 @@ public interface LoginRepository extends JpaRepository<Login, Long> {
     @Transactional
     @Modifying
     @Query("UPDATE login SET email = ?1 WHERE idLogin = ?2")
-    void updateLoginEmail(String email, Long id_login);
+    void updateLoginEmail(String email, Long idLogin);
 
     @Transactional
     @Modifying
     @Query("UPDATE login SET password = ?1 WHERE idLogin = ?2")
-    void updateLoginPassword(String password, Long id_login);
+    void updateLoginPassword(String password, Long idLogin);
 }

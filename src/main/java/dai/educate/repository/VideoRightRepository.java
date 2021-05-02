@@ -11,12 +11,12 @@ import java.util.List;
 @Repository
 public interface VideoRightRepository extends JpaRepository<VideoRight, Long> {
 
-    @Query("SELECT v FROM video_right v WHERE v.id_video = ?1")
-    VideoRight findVideoRightById(Long id_video);
+    @Query("SELECT v FROM videoRight v WHERE v.idVideo = ?1")
+    VideoRight findVideoRightById(Long idVideo);
 
     List<VideoRight> findAll();
 
     @Override
-    void delete(VideoRight video_right);
+    void delete(VideoRight videoRight);
 
 }

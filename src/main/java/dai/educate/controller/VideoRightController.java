@@ -23,19 +23,19 @@ public class VideoRightController {
         return videoRightRepository.findAll();
     }
 
-    @GetMapping("/videorights/{id_video}")
-    public VideoRight findVideoRight(@PathVariable long id_video){
-        return videoRightRepository.findVideoRightById(id_video);
+    @GetMapping("/videorights/{idVideo}")
+    public VideoRight findVideoRight(@PathVariable long idVideo){
+        return videoRightRepository.findVideoRightById(idVideo);
     }
 
     @PostMapping("/videorights")
     public ResponseEntity<ApiResponse> saveRight(@RequestBody VideoRight videoRight) {
         try {
             // Activity Attributes
-            String video_link = videoRight.getLink_video();
+            String linkVideo = videoRight.getLinkVideo();
 
             // Create Video Right
-            VideoRight newVideoRight = new VideoRight(null, video_link);
+            VideoRight newVideoRight = new VideoRight(null, linkVideo);
             videoRightRepository.save(newVideoRight);
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Video Right created"),
@@ -47,14 +47,14 @@ public class VideoRightController {
         }
     }
 
-    @DeleteMapping("/videorights/{id_video}")
-    public ResponseEntity<ApiResponse> deleteVideoRight(@PathVariable (value="id_video")long id_video) {
+    @DeleteMapping("/videorights/{idVideo}")
+    public ResponseEntity<ApiResponse> deleteVideoRight(@PathVariable (value="idVideo")long idVideo) {
         try {
-            VideoRight videoRight = videoRightRepository.findVideoRightById(id_video);
+            VideoRight videoRight = videoRightRepository.findVideoRightById(idVideo);
 
             videoRightRepository.delete(videoRight);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", id_video),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idVideo),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

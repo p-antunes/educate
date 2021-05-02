@@ -17,6 +17,7 @@ import java.util.Collection;
 public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idLogin")
     private Long idLogin;
 
     @Column(unique = true)

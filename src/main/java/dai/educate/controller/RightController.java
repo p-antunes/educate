@@ -22,9 +22,9 @@ public class RightController {
         return rightRepository.findAll();
     }
 
-    @GetMapping("/rights/{id_right}")
-    public Rights findRight(@PathVariable long id_right){
-        return rightRepository.findByIdRight(id_right);
+    @GetMapping("/rights/{idRight}")
+    public Rights findRight(@PathVariable long idRight){
+        return rightRepository.findByIdRight(idRight);
     }
 
     @PostMapping("/rights")
@@ -47,13 +47,13 @@ public class RightController {
     }
 
     @DeleteMapping("/rights/{id_right}")
-    public ResponseEntity<ApiResponse> deleteRight(@PathVariable (value="id_right")long id_right) {
+    public ResponseEntity<ApiResponse> deleteRight(@PathVariable (value="idRight")long idRight) {
         try {
-            Rights right = rightRepository.findByIdRight(id_right);
+            Rights right = rightRepository.findByIdRight(idRight);
 
             rightRepository.delete(right);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", id_right),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idRight),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

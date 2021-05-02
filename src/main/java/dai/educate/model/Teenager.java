@@ -18,10 +18,10 @@ public class Teenager {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "birth_date")
-    private Date birth_date;
+    @Column(name = "birthDate")
+    private Date birthDate;
 
-    @Column(name = "phone_nr")
+    @Column(name = "phoneNr")
     private String phoneNr;
 
     @Column(name = "city")
@@ -30,7 +30,7 @@ public class Teenager {
     @Column(name = "county")
     private String county;
 
-    @Column(name = "postal_code")
+    @Column(name = "postalCode")
     private String postalCode;
 
     @Column(name = "address")
@@ -40,13 +40,13 @@ public class Teenager {
     private String school;
 
     @ManyToOne
-    @JoinColumn(name = "id_login", referencedColumnName = "id_login", nullable = false)
+    @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
-    public Teenager(Long idTeenager, @NotBlank(message = "Can't be blank") String name, Date birth_date, String phoneNr, String city, String county, String postalCode, String address, String school, Login login) {
+    public Teenager(Long idTeenager, @NotBlank(message = "Can't be blank") String name, Date birthDate, String phoneNr, String city, String county, String postalCode, String address, String school, Login login) {
         this.idTeenager = idTeenager;
         this.name = name;
-        this.birth_date = birth_date;
+        this.birthDate = birthDate;
         this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
@@ -75,12 +75,12 @@ public class Teenager {
         this.name = name;
     }
 
-    public Date getBirth_date() {
-        return birth_date;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(Date birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getPhoneNr() {

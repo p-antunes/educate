@@ -1,5 +1,5 @@
 package dai.educate.security;
-/*
+
 import dai.educate.model.Child;
 import dai.educate.model.Institution;
 import dai.educate.model.Login;
@@ -98,4 +98,3 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
     }
 }
-*/

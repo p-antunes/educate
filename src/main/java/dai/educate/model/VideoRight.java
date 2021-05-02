@@ -11,11 +11,11 @@ public class VideoRight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "Can't be blank")
-    @Column(name = "idVideo")
+
     private Long idVideo;
 
     @NotBlank(message = "Can't be blank")
-    @Column(name = "linkVideo")
+
     private String linkVideo;
 
     public VideoRight(@NotBlank(message = "Can't be blank") Long idVideo, @NotBlank(message = "Can't be blank") String linkVideo) {

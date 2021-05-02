@@ -1,5 +1,5 @@
 package dai.educate.repository;
-/*
+
 import dai.educate.model.Login;
 import dai.educate.model.Teenager;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,4 +19,3 @@ public interface TeenagerRepository extends JpaRepository<Teenager, Long> {
     List<Teenager> findAll();
 
 }
-*/

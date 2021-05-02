@@ -11,32 +11,30 @@ public class Teenager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTeenager")
     private Long idTeenager;
 
     @NotBlank(message = "Can't be blank")
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "birthDate")
+
     private Date birthDate;
 
-    @Column(name = "phoneNr")
+
     private String phoneNr;
 
-    @Column(name = "city")
+
     private String city;
 
-    @Column(name = "county")
+
     private String county;
 
-    @Column(name = "postalCode")
+
     private String postalCode;
 
-    @Column(name = "address")
+
     private String address;
 
-    @Column(name = "school")
+
     private String school;
 
     @ManyToOne

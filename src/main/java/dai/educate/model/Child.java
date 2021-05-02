@@ -1,9 +1,11 @@
 package dai.educate.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
-
 
 @Entity(name = "child")
 @Table(name="child")
@@ -12,29 +14,20 @@ public class Child {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idChild")
     private Long idChild;
 
     @NotBlank(message = "Can't be blank")
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "birthDate")
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @NotNull(message = "Can't be null")
     private Date birthDate;
 
-    @Column(name = "city")
     private String city;
-
-    @Column(name = "county")
     private String county;
-
-    @Column(name = "postalCode")
     private String postalCode;
-
-    @Column(name = "address")
     private String address;
-
-    @Column(name = "school")
     private String school;
 
     @ManyToOne

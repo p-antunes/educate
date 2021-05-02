@@ -10,10 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LoginRepository extends JpaRepository<Login, Long> {
-    Login findDistinctByIdLogin(long idLogin);
+
+    Login findDistinctByIdLogin(Long idLogin);
 
     @Override
     Optional<Login> findById(Long aLong);
+
 
     Login findDistinctByEmail(String email);
 

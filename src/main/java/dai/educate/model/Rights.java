@@ -10,10 +10,8 @@ public class Rights {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idRight")
     private Long idRight;
 
-    @Column(name = "rights")
     @NotBlank(message = "Can't be blank")
     private String rights;
 

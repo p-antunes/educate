@@ -1,6 +1,7 @@
-package dai.educate.model;
+package dai.educate.model.Create;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import dai.educate.model.Role;
 import dai.educate.util.ConstantUtils;
 
 import javax.persistence.Temporal;
@@ -11,7 +12,15 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 
-public class CreateChild {
+public class CreateProchild {
+
+    @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces")
+    private String name;
+
+    @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
+    private String address;
 
     @Email(message = "Insert a valid email")
     private String email;
@@ -24,9 +33,6 @@ public class CreateChild {
     @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number")
     private String confirmPassword;
 
-    @NotBlank(message = "Can't be blank")
-    private String name;
-
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @NotNull(message = "Can't be null")
@@ -35,12 +41,9 @@ public class CreateChild {
     private String city;
     private String county;
     private String postalCode;
-    private String address;
-    private String school;
     private Role role;
 
-    public CreateChild(@Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") String name, @NotNull(message = "Can't be null") Date birthDate, String city, String county, String postalCode, String address, String school, Role role) {
-        this.email = email;
+    public CreateProchild(@NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")") String address, @Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces") String name, long idTownHall, Role role) {
         this.password = password;
         this.confirmPassword = confirmPassword;
         this.name = name;
@@ -49,11 +52,26 @@ public class CreateChild {
         this.county = county;
         this.postalCode = postalCode;
         this.address = address;
-        this.school = school;
         this.role = role;
     }
 
-    public CreateChild() {
+    public CreateProchild() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getEmail() {
@@ -78,14 +96,6 @@ public class CreateChild {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Date getBirthDate() {
@@ -120,22 +130,6 @@ public class CreateChild {
         this.postalCode = postalCode;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
     public Role getRole() {
         return role;
     }
@@ -144,3 +138,4 @@ public class CreateChild {
         this.role = role;
     }
 }
+

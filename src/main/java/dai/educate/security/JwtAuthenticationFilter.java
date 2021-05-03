@@ -1,4 +1,4 @@
-package dai.educate.security;
+/*package dai.educate.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -69,4 +69,4 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         return null;
     }
-}
+}*/

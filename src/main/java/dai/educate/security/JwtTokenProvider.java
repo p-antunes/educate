@@ -1,4 +1,4 @@
-package dai.educate.security;
+/*package dai.educate.security;
 
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
@@ -57,5 +57,5 @@ public class JwtTokenProvider {
         }
         return false;
     }
-}
+}*/
 

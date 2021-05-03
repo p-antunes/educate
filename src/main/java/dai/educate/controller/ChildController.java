@@ -2,7 +2,7 @@ package dai.educate.controller;
 
 
 import dai.educate.model.Child;
-import dai.educate.model.CreateChild;
+import dai.educate.model.Create.CreateChild;
 import dai.educate.model.Login;
 import dai.educate.model.Role;
 import dai.educate.payload.response.ApiResponse;

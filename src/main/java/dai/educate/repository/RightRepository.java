@@ -10,8 +10,8 @@ import java.util.List;
 @Repository
 public interface RightRepository extends JpaRepository<Rights, Long> {
 
-    @Query("SELECT v FROM rights v WHERE v.id_right = ?1")
-    Rights findByIdRight(long id_right);
+    @Query("SELECT v FROM rights v WHERE v.idRight = ?1")
+    Rights findByIdRight(long idRight);
 
     List<Rights> findAll();
 

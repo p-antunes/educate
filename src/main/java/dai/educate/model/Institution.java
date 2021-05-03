@@ -1,60 +1,62 @@
 package dai.educate.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
 
-@Entity(name = "child")
-@Table(name="child")
+@Entity(name = "institution")
+@Table(name="institution")
 
-public class Child {
+public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChild;
+    @NotBlank(message = "Can't be blank")
+
+    private Long idInstitution;
 
     @NotBlank(message = "Can't be blank")
+
     private String name;
 
-    @Temporal(TemporalType.DATE)
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @NotNull(message = "Can't be null")
-    private Date birthDate;
+
+    private String phoneNr;
+
 
     private String city;
+
+
     private String county;
+
+
     private String postalCode;
+
+
     private String address;
-    private String school;
 
     @ManyToOne
     @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
-    public Child(Long idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, Login login) {
-        this.idChild = idChild;
+    public Institution(@NotBlank(message = "Can't be blank") Long idInstitution, @NotBlank(message = "Can't be blank") String name, String phoneNr, String city, String county, String postalCode, String address, Login login) {
+        this.idInstitution = idInstitution;
         this.name = name;
-        this.birthDate = birthDate;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
         this.address = address;
-        this.school = school;
         this.login = login;
     }
 
-    public Child() {
+    public Institution() {
     }
 
-    public Long getIdChild() {
-        return idChild;
+    public Long getIdInstitution() {
+        return idInstitution;
     }
 
-    public void setIdChild(Long idChild) {
-        this.idChild = idChild;
+    public void setIdInstitution(Long idInstitution) {
+        this.idInstitution = idInstitution;
     }
 
     public String getName() {
@@ -65,12 +67,12 @@ public class Child {
         this.name = name;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public String getPhoneNr() {
+        return phoneNr;
     }
 
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public String getCity() {
@@ -103,14 +105,6 @@ public class Child {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
     }
 
     public Login getLogin() {

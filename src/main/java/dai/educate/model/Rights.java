@@ -10,28 +10,26 @@ public class Rights {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_right;
+    private Long idRight;
 
     @NotBlank(message = "Can't be blank")
     private String rights;
 
-
-    public Rights(Long id_right, @NotBlank(message = "Can't be blank") String name) {
-        this.id_right = id_right;
-        this.rights = name;
+    public Rights(Long idRight, @NotBlank(message = "Can't be blank") String rights) {
+        this.idRight = idRight;
+        this.rights = rights;
     }
 
     public Rights() {
     }
 
-    public Long getId_right() {
-        return id_right;
+    public Long getIdRight() {
+        return idRight;
     }
 
-    public void setId_right(Long id_right) {
-        this.id_right = id_right;
+    public void setIdRight(Long idRight) {
+        this.idRight = idRight;
     }
-
 
     public String getRights() {
         return rights;
@@ -41,3 +39,4 @@ public class Rights {
         this.rights = rights;
     }
 }
+

@@ -1,43 +1,51 @@
 package dai.educate.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@Entity(name = "child")
-@Table(name="child")
-
-public class Child {
+@Entity(name = "teenager")
+@Table(name="teenager")
+public class Teenager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChild;
+    private Long idTeenager;
 
     @NotBlank(message = "Can't be blank")
     private String name;
 
-    @Temporal(TemporalType.DATE)
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @NotNull(message = "Can't be null")
+
     private Date birthDate;
 
+
+    private String phoneNr;
+
+
     private String city;
+
+
     private String county;
+
+
     private String postalCode;
+
+
     private String address;
+
+
     private String school;
 
     @ManyToOne
     @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
-    public Child(Long idChild, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String school, Login login) {
-        this.idChild = idChild;
+    public Teenager(Long idTeenager, @NotBlank(message = "Can't be blank") String name, Date birthDate, String phoneNr, String city, String county, String postalCode, String address, String school, Login login) {
+        this.idTeenager = idTeenager;
         this.name = name;
         this.birthDate = birthDate;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
@@ -46,15 +54,15 @@ public class Child {
         this.login = login;
     }
 
-    public Child() {
+    public Teenager() {
     }
 
-    public Long getIdChild() {
-        return idChild;
+    public Long getIdTeenager() {
+        return idTeenager;
     }
 
-    public void setIdChild(Long idChild) {
-        this.idChild = idChild;
+    public void setIdTeenager(Long idTeenager) {
+        this.idTeenager = idTeenager;
     }
 
     public String getName() {
@@ -71,6 +79,14 @@ public class Child {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getPhoneNr() {
+        return phoneNr;
+    }
+
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public String getCity() {

@@ -2,14 +2,11 @@ package dai.educate.model;
 
 
 import dai.educate.util.ConstantUtils;
-
-
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import java.util.Collection;
+
 
 @Entity(name = "login")
 @Table(name = "login")
@@ -28,7 +25,8 @@ public class Login {
     private String password;
 
     @OneToOne
-    @JoinColumn(name = "idRole", referencedColumnName = "idRole", nullable = true)
+    //@JoinColumn(name = "idRole", referencedColumnName = "idRole", nullable = true)
+    @JoinColumn(name = "idRole", referencedColumnName = "idRole", nullable = false)
     private Role role;
 
     public Login() {

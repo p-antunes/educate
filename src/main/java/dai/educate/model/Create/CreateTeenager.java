@@ -18,6 +18,10 @@ public class CreateTeenager {
     private String email;
 
     @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
+    private String address;
+
+    @NotBlank(message = "Can't be blank")
     @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number")
     private String password;
 
@@ -36,7 +40,6 @@ public class CreateTeenager {
     private String city;
     private String county;
     private String postalCode;
-    private String address;
     private String school;
     private Role role;
 

@@ -10,24 +10,27 @@ public class Psychologist {
     @Id
     private int idPsychologist;
     private String name;
-    private String user_name;
-    private String birth_date;
+    private String userName;
+    private String birthDate;
     private String city;
     private String county;
-    private String postal_code;
+    private String postalCode;
     private String address;
-    private int id_login;
 
-    public Psychologist(int idPsychologist, String name, String user_name, String birth_date, String city, String county, String postal_code, String address, int id_login) {
+    @ManyToOne
+    @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
+    private Login login;
+
+    public Psychologist(int idPsychologist, String name, String userName, String birthDate, String city, String county, String postalCode, String address, int idLogin) {
         this.idPsychologist = idPsychologist;
         this.name = name;
-        this.user_name = user_name;
-        this.birth_date = birth_date;
+        this.userName = userName;
+        this.birthDate = birthDate;
         this.city = city;
         this.county = county;
-        this.postal_code = postal_code;
+        this.postalCode = postalCode;
         this.address = address;
-        this.id_login = id_login;
+        this.login = login;
     }
 
     public Psychologist() {
@@ -50,20 +53,20 @@ public class Psychologist {
         this.name = name;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String user_name) {
+        this.userName = userName;
     }
 
-    public String getBirth_date() {
-        return birth_date;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public void setBirth_date(String birth_date) {
-        this.birth_date = birth_date;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getCity() {
@@ -82,12 +85,12 @@ public class Psychologist {
         this.county = county;
     }
 
-    public String getPostal_code() {
-        return postal_code;
+    public String getPostalCode() {
+        return postalCode;
     }
 
-    public void setPostal_code(String postal_code) {
-        this.postal_code = postal_code;
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String getAddress() {
@@ -98,11 +101,11 @@ public class Psychologist {
         this.address = address;
     }
 
-    public int getId_login() {
-        return id_login;
+    public Login getLogin() {
+        return login;
     }
 
-    public void setId_login(int id_login) {
-        this.id_login = id_login;
+    public void setLogin(Login login) {
+        this.login = login;
     }
 }

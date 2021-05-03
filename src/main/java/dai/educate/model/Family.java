@@ -16,11 +16,11 @@ public class Family {
     private String name;
 
     @NotBlank(message = "Can't be blank")
-    private String user_name;
-    private String birth_day;
+    private String userName;
+    private String birthDate;
     private String city;
     private String county;
-    private String postal_code;
+    private String postalCode;
     private String address;
     private String phonenr;
 
@@ -28,14 +28,14 @@ public class Family {
     @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
-    public Family(int idFamily, String name, String user_name, String birth_day, String city, String county, String postal_code, String address, String phone_nr, Login login) {
+    public Family(int idFamily, String name, String userName, String birthDate, String city, String county, String postalCode, String address, String phonenr, Login login) {
         this.idFamily = idFamily;
         this.name = name;
-        this.user_name = user_name;
-        this.birth_day = birth_day;
+        this.userName = userName;
+        this.birthDate = birthDate;
         this.city = city;
         this.county = county;
-        this.postal_code = postal_code;
+        this.postalCode = postalCode;
         this.address = address;
         this.phonenr = phonenr;
         this.login = login;
@@ -61,20 +61,20 @@ public class Family {
         this.name = name;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String user_name) {
+        this.userName = user_name;
     }
 
     public String getBirth_day() {
-        return birth_day;
+        return birthDate;
     }
 
     public void setBirth_day(String birth_day) {
-        this.birth_day = birth_day;
+        this.birthDate = birth_day;
     }
 
     public String getCity() {
@@ -89,16 +89,14 @@ public class Family {
         return county;
     }
 
-    public void setCounty(String county) {
-        this.county = county;
+    public void setCounty(String county) { this.county = county; }
+
+    public String getPostalCode() {
+        return postalCode;
     }
 
-    public String getPostal_code() {
-        return postal_code;
-    }
-
-    public void setPostal_code(String postal_code) {
-        this.postal_code = postal_code;
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String getAddress() {

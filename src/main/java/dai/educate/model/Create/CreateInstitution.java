@@ -1,5 +1,6 @@
-package dai.educate.model;
+package dai.educate.model.Create;
 
+import dai.educate.model.Role;
 import dai.educate.util.ConstantUtils;
 
 import javax.validation.constraints.Email;
@@ -26,8 +27,6 @@ public class CreateInstitution {
     @NotBlank(message = "Can't be blank")
     @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces")
     private String name;
-
-    private long idTownHall;
 
     private Role role;
 
@@ -82,7 +81,6 @@ public class CreateInstitution {
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
-
 
     public Role getRole() {
         return role;

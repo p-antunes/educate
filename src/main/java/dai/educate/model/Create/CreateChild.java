@@ -1,6 +1,7 @@
-package dai.educate.model;
+package dai.educate.model.Create;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import dai.educate.model.Role;
 import dai.educate.util.ConstantUtils;
 
 import javax.persistence.Temporal;
@@ -11,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 
-public class CreateTeenager {
+public class CreateChild {
 
     @Email(message = "Insert a valid email")
     private String email;
@@ -39,7 +40,7 @@ public class CreateTeenager {
     private String school;
     private Role role;
 
-    public CreateTeenager(@Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") String name, @NotNull(message = "Can't be null") Date birthDate, String city, String county, String postalCode, String address, String school, Role role) {
+    public CreateChild(@Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") String name, @NotNull(message = "Can't be null") Date birthDate, String city, String county, String postalCode, String address, String school, Role role) {
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
@@ -53,7 +54,7 @@ public class CreateTeenager {
         this.role = role;
     }
 
-    public CreateTeenager() {
+    public CreateChild() {
     }
 
     public String getEmail() {
@@ -144,4 +145,3 @@ public class CreateTeenager {
         this.role = role;
     }
 }
-

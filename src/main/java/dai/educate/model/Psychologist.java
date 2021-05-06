@@ -1,6 +1,10 @@
 package dai.educate.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.Date;
 
 @Entity(name = "psychologist")
 @Table(name = "psychologist")
@@ -8,10 +12,17 @@ import javax.persistence.*;
 public class Psychologist {
 
     @Id
-    private int idPsychologist;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idPsychologist;
+
+    @NotBlank(message = "Can't be blank")
     private String name;
-    private String userName;
-    private String birthDate;
+
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date birthDate;
+
+    private String phoneNr;
     private String city;
     private String county;
     private String postalCode;
@@ -21,11 +32,12 @@ public class Psychologist {
     @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
-    public Psychologist(int idPsychologist, String name, String userName, String birthDate, String city, String county, String postalCode, String address, int idLogin) {
+
+    public Psychologist(Long idPsychologist, @NotBlank(message = "Can't be blank") String name, Date birthDate, String phoneNr, String city, String county, String postalCode, String address, Login login) {
         this.idPsychologist = idPsychologist;
         this.name = name;
-        this.userName = userName;
         this.birthDate = birthDate;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
@@ -34,14 +46,13 @@ public class Psychologist {
     }
 
     public Psychologist() {
-
     }
 
-    public int getIdPsychologist() {
+    public Long getIdPsychologist() {
         return idPsychologist;
     }
 
-    public void setIdPsychologist(int idPsychologist) {
+    public void setIdPsychologist(Long idPsychologist) {
         this.idPsychologist = idPsychologist;
     }
 
@@ -53,20 +64,20 @@ public class Psychologist {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String user_name) {
-        this.userName = userName;
-    }
-
-    public String getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getPhoneNr() {
+        return phoneNr;
+    }
+
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public String getCity() {

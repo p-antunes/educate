@@ -1,6 +1,7 @@
 package dai.educate.controller;
 
 import dai.educate.model.Create.CreateInstitution;
+import dai.educate.model.Family;
 import dai.educate.model.Institution;
 import dai.educate.model.Login;
 import dai.educate.model.Role;
@@ -14,10 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -93,6 +91,20 @@ public class InstitutionController {
         }
     }
 
+    @DeleteMapping("/institutions/{idInstitution}")
+    public ResponseEntity<ApiResponse> deleteInstitution(@PathVariable (value="idInstitution")long idInstitution) {
+        try {
+            Institution institution = institutionRepository.findDistinctByIdInstitution(idInstitution);
+
+            institutionRepository.delete(institution);
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idInstitution),
+                    HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
 
 }
-}
+

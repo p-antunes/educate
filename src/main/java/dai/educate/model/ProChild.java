@@ -14,19 +14,20 @@ public class ProChild {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idProChild;
+    private Long idProChild;
 
     @NotBlank(message = "Can't be blank")
     private String name;
+    private String phoneNr;
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @NotNull(message = "Can't be null")
-    private Date birth_date;
+    private Date birthDate;
 
     private String city;
     private String county;
-    private String postal_code;
+    private String postalCode;
     private String address;
 
     @ManyToOne
@@ -34,13 +35,14 @@ public class ProChild {
     private Login login;
 
 
-    public ProChild(int idProChild, @NotBlank(message = "Can't be blank") String name, @NotNull(message = "Can't be null") Date birth_date, String city, String county, String postal_code, String address, Login login) {
+    public ProChild(Long idProChild, @NotBlank(message = "Can't be blank") String name, String phoneNr, @NotNull(message = "Can't be null") Date birthDate, String city, String county, String postalCode, String address, Login login) {
         this.idProChild = idProChild;
         this.name = name;
-        this.birth_date = birth_date;
+        this.phoneNr = phoneNr;
+        this.birthDate = birthDate;
         this.city = city;
         this.county = county;
-        this.postal_code = postal_code;
+        this.postalCode = postalCode;
         this.address = address;
         this.login = login;
     }
@@ -48,11 +50,11 @@ public class ProChild {
     public ProChild() {
     }
 
-    public int getIdProChild() {
+    public Long getIdProChild() {
         return idProChild;
     }
 
-    public void setIdProChild(int idProChild) {
+    public void setIdProChild(Long idProChild) {
         this.idProChild = idProChild;
     }
 
@@ -64,12 +66,20 @@ public class ProChild {
         this.name = name;
     }
 
-    public Date getBirth_date() {
-        return birth_date;
+    public String getPhoneNr() {
+        return phoneNr;
     }
 
-    public void setBirth_date(Date birth_date) {
-        this.birth_date = birth_date;
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getCity() {
@@ -88,12 +98,12 @@ public class ProChild {
         this.county = county;
     }
 
-    public String getPostal_code() {
-        return postal_code;
+    public String getPostalCode() {
+        return postalCode;
     }
 
-    public void setPostal_code(String postal_code) {
-        this.postal_code = postal_code;
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String getAddress() {

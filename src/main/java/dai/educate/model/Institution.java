@@ -11,26 +11,14 @@ public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotBlank(message = "Can't be blank")
-
     private Long idInstitution;
 
     @NotBlank(message = "Can't be blank")
-
     private String name;
-
-
     private String phoneNr;
-
-
     private String city;
-
-
     private String county;
-
-
     private String postalCode;
-
-
     private String address;
 
     @ManyToOne

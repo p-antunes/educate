@@ -97,4 +97,19 @@ public class FamilyController {
         }
     }
 
+    @DeleteMapping("/family/{idFamily}")
+    public ResponseEntity<ApiResponse> deleteFamily(@PathVariable (value="idFamily")long idFamily) {
+        try {
+            Family family = familyRepository.findDistinctByIdFamily(idFamily);
+
+            familyRepository.delete(family);
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idFamily),
+                    HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }

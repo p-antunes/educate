@@ -4,6 +4,7 @@ package dai.educate.controller;
 import dai.educate.model.Child;
 import dai.educate.model.Create.CreateChild;
 import dai.educate.model.Login;
+import dai.educate.model.Rights;
 import dai.educate.model.Role;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.ChildRepository;
@@ -30,7 +31,7 @@ public class ChildController {
     @Autowired
     LoginRepository loginRepository;
 
-    @PreAuthorize("hasRole('INSTITUTION') or hasRole('MANAGER') or hasRole('NETWORKMAN')")
+    //@PreAuthorize("hasRole('') or hasRole('') ")
     @GetMapping("/children")
     public List<Child> listChildren(@CurrentUser UserPrincipal currentUser) {
         return childRepository.findAll();
@@ -95,5 +96,19 @@ public class ChildController {
         }
     }
 
+    @DeleteMapping("/children/{idChild}")
+    public ResponseEntity<ApiResponse> deleteChild(@PathVariable (value="idChild")long idChild) {
+        try {
+            Child child = childRepository.findDistinctByIdChild(idChild);
+
+            childRepository.delete(child);
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idChild),
+                    HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
 
 }

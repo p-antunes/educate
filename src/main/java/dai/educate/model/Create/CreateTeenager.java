@@ -17,9 +17,6 @@ public class CreateTeenager {
     @Email(message = "Insert a valid email")
     private String email;
 
-    @NotBlank(message = "Can't be blank")
-    @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
-    private String address;
 
     @NotBlank(message = "Can't be blank")
     @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number")
@@ -34,26 +31,33 @@ public class CreateTeenager {
 
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @NotNull(message = "Can't be null")
     private Date birthDate;
 
+    private String phoneNr;
     private String city;
     private String county;
     private String postalCode;
     private String school;
+
+    @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
+    private String address;
+
     private Role role;
 
-    public CreateTeenager(@Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") String name, @NotNull(message = "Can't be null") Date birthDate, String city, String county, String postalCode, String address, String school, Role role) {
+
+    public CreateTeenager(@Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") String name, Date birthDate, String phoneNr, String city, String county, String postalCode, String school, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")") String address, Role role) {
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
         this.name = name;
         this.birthDate = birthDate;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
-        this.address = address;
         this.school = school;
+        this.address = address;
         this.role = role;
     }
 
@@ -100,6 +104,14 @@ public class CreateTeenager {
         this.birthDate = birthDate;
     }
 
+    public String getPhoneNr() {
+        return phoneNr;
+    }
+
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
+    }
+
     public String getCity() {
         return city;
     }
@@ -124,20 +136,20 @@ public class CreateTeenager {
         this.postalCode = postalCode;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getSchool() {
         return school;
     }
 
     public void setSchool(String school) {
         this.school = school;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Role getRole() {

@@ -1,6 +1,8 @@
 package dai.educate.controller;
-/*
-import dai.educate.model.Family;
+
+import dai.educate.model.Create.CreateProChild;
+
+import dai.educate.model.Institution;
 import dai.educate.model.Login;
 import dai.educate.model.ProChild;
 import dai.educate.model.Role;
@@ -13,10 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -30,30 +29,30 @@ public class ProChildController {
     LoginRepository loginRepository;
 
     //@PreAuthorize("hasRole('') or hasRole('') ")
-    @GetMapping("/prochild")
-    public List<ProChild> listProChildCollab(@CurrentUser UserPrincipal currentUser) {
+    @GetMapping("/prochilds")
+    public List<ProChild> listProChild(@CurrentUser UserPrincipal currentUser) {
         return prochildRepository.findAll();
     }
 
-    @GetMapping("/prochild/{idCollab}")
-    public ProChild findProChildCollab(/*@CurrentUser UserPrincipal currentUser*/ @PathVariable long idCollab) {
-     /*   return prochildRepository.findDistinctByIdCollab(idCollab);
+    @GetMapping("/prochilds/{idCollab}")
+    public ProChild findProChild(/*@CurrentUser UserPrincipal currentUser*/ @PathVariable long idProChild) {
+       return prochildRepository.findDistinctByIdProChild(idProChild);
     }
-    @PostMapping("/prochild") // Creat account
-    public ResponseEntity<ApiResponse> savepProChildCollab(@RequestBody CreateProChild family) {
+    @PostMapping("/prochilds") // Creat account
+    public ResponseEntity<ApiResponse> saveProChild(@RequestBody CreateProChild prochild) {
         try {
             // Activity Attributes
-            String email = family.getEmail();
-            String password = family.getPassword();
-            String confirmPassword = family.getConfirmPassword();
-            String name = family.getName();
-            Date birthDate = family.getBirthDate();
-            String phoneNr = family.getPhoneNr();
-            String city = family.getCity();
-            String county = family.getCounty();
-            String postalCode = family.getPostalCode();
-            String address = family.getAddress();
-            Role role = family.getRole();
+            String email = prochild.getEmail();
+            String password = prochild.getPassword();
+            String confirmPassword = prochild.getConfirmPassword();
+            String name = prochild.getName();
+            Date birthDate = prochild.getBirthDate();
+            String phoneNr = prochild.getPhoneNr();
+            String city = prochild.getCity();
+            String county = prochild.getCounty();
+            String postalCode = prochild.getPostalCode();
+            String address = prochild.getAddress();
+            Role role = prochild.getRole();
 
 
             if (!confirmPassword.equals(password)) {
@@ -82,8 +81,8 @@ public class ProChildController {
             loginRepository.save(log);
 
             // Create Child
-            Family newFamily = new Family(null,name,birthDate,city,county, postalCode,address,phoneNr, log);
-            familyRepository.save(newFamily);
+            ProChild newProChild = new ProChild(null,name,phoneNr,birthDate,city,county, postalCode,address, log);
+            prochildRepository.save(newProChild);
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Conta criada com sucesso"),
                     HttpStatus.CREATED);
@@ -94,5 +93,19 @@ public class ProChildController {
         }
     }
 
+    @DeleteMapping("/prochilds/{idCollab}")
+    public ResponseEntity<ApiResponse> deleteProChild(@PathVariable (value="idProChild")long idProChild) {
+        try {
+            ProChild prochild = prochildRepository.findDistinctByIdProChild(idProChild);
+
+            prochildRepository.delete(prochild);
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idProChild),
+                    HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }
-*/

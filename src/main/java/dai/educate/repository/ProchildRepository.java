@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProchildRepository extends JpaRepository<ProChild, Long> {
 
-    ProChild findDistinctByIdCollab(Long idCollab);
+    ProChild findDistinctByIdProChild(Long idProChild);
 
     ProChild findDistinctByLogin(Login login);
 

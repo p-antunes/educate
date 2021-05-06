@@ -16,25 +16,12 @@ public class Teenager {
     @NotBlank(message = "Can't be blank")
     private String name;
 
-
     private Date birthDate;
-
-
     private String phoneNr;
-
-
     private String city;
-
-
     private String county;
-
-
     private String postalCode;
-
-
     private String address;
-
-
     private String school;
 
     @ManyToOne

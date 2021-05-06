@@ -1,8 +1,8 @@
 package dai.educate.controller;
-/*
-import daibackend.demo.model.custom.LoginRequest;
-import daibackend.demo.payload.response.ApiResponse;
-import daibackend.demo.service.AuthService;
+
+import dai.educate.model.LoginRequest;
+import dai.educate.payload.response.ApiResponse;
+import dai.educate.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -42,4 +42,3 @@ public class AuthController {
 
 
 }
-*/

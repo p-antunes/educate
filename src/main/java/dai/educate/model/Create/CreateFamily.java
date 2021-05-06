@@ -13,19 +13,6 @@ import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 public class CreateFamily {
-
-    @NotBlank(message = "Can't be blank")
-    @Pattern(regexp = ConstantUtils.CODE_PATTERN, message = "Can only use numbers")
-    private String phonenr;
-
-    @NotBlank(message = "Can't be blank")
-    @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces")
-    private String name;
-
-    @NotBlank(message = "Can't be blank")
-    @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
-    private String address;
-
     @Email(message = "Insert a valid email")
     private String email;
 
@@ -37,22 +24,36 @@ public class CreateFamily {
     @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number")
     private String confirmPassword;
 
+    @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces")
+    private String name;
+
     @Temporal(TemporalType.DATE)
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @NotNull(message = "Can't be null")
     private Date birthDate;
+
+    @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.CODE_PATTERN, message = "Can only use numbers")
+    private String phoneNr;
 
     private String city;
     private String county;
     private String postalCode;
+
+    @NotBlank(message = "Can't be blank")
+    @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
+    private String address;
+
     private Role role;
 
-    public CreateFamily(@NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")") String address, @Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces") String name, long idTownHall, Role role) {
+    public CreateFamily(@Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces") String name, @NotNull(message = "Can't be null") Date birthDate, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.CODE_PATTERN, message = "Can only use numbers") String phoneNr, String city, String county, String postalCode, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")") String address, Role role) {
+        this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
         this.name = name;
-        this.phonenr = phonenr;
         this.birthDate = birthDate;
+        this.phoneNr = phoneNr;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
@@ -61,22 +62,6 @@ public class CreateFamily {
     }
 
     public CreateFamily() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getEmail() {
@@ -103,12 +88,28 @@ public class CreateFamily {
         this.confirmPassword = confirmPassword;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Date getBirthDate() {
         return birthDate;
     }
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getPhoneNr() {
+        return phoneNr;
+    }
+
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public String getCity() {
@@ -135,12 +136,12 @@ public class CreateFamily {
         this.postalCode = postalCode;
     }
 
-    public String getPhonenr() {
-        return phonenr;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPhonenr(String phonenr) {
-        this.phonenr = phonenr;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Role getRole() {
@@ -151,3 +152,6 @@ public class CreateFamily {
         this.role = role;
     }
 }
+
+
+

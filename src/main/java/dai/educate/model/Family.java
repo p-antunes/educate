@@ -3,6 +3,7 @@ package dai.educate.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Entity(name = "family")
 @Table(name = "family")
@@ -10,46 +11,43 @@ public class Family {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idFamily;
+    private Long idFamily;
 
     @NotBlank(message = "Can't be blank")
     private String name;
 
-    @NotBlank(message = "Can't be blank")
-    private String userName;
-    private String birthDate;
+    private Date birthDate;
     private String city;
     private String county;
     private String postalCode;
     private String address;
-    private String phonenr;
+    private String phoneNr;
 
     @ManyToOne
     @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
 
-    public Family(int idFamily, String name, String userName, String birthDate, String city, String county, String postalCode, String address, String phonenr, Login login) {
+
+    public Family(Long idFamily, @NotBlank(message = "Can't be blank") String name, Date birthDate, String city, String county, String postalCode, String address, String phoneNr, Login login) {
         this.idFamily = idFamily;
         this.name = name;
-        this.userName = userName;
         this.birthDate = birthDate;
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
         this.address = address;
-        this.phonenr = phonenr;
+        this.phoneNr = phoneNr;
         this.login = login;
     }
 
     public Family() {
-
     }
 
-    public int getIdFamily() {
+    public Long getIdFamily() {
         return idFamily;
     }
 
-    public void setIdFamily(int idFamily) {
+    public void setIdFamily(Long idFamily) {
         this.idFamily = idFamily;
     }
 
@@ -61,20 +59,12 @@ public class Family {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String user_name) {
-        this.userName = user_name;
-    }
-
-    public String getBirth_day() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
-    public void setBirth_day(String birth_day) {
-        this.birthDate = birth_day;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getCity() {
@@ -89,7 +79,9 @@ public class Family {
         return county;
     }
 
-    public void setCounty(String county) { this.county = county; }
+    public void setCounty(String county) {
+        this.county = county;
+    }
 
     public String getPostalCode() {
         return postalCode;
@@ -107,12 +99,12 @@ public class Family {
         this.address = address;
     }
 
-    public String getPhonenr() {
-        return phonenr;
+    public String getPhoneNr() {
+        return phoneNr;
     }
 
-    public void setPhonenr(String phone_nr) {
-        this.phonenr = phonenr;
+    public void setPhoneNr(String phoneNr) {
+        this.phoneNr = phoneNr;
     }
 
     public Login getLogin() {

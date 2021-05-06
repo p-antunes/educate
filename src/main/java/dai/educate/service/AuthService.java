@@ -1,13 +1,16 @@
 package dai.educate.service;
-/*
+
 import dai.educate.exception.ResourceNotFoundException;
 import dai.educate.model.Child;
+import dai.educate.model.Institution;
 import dai.educate.model.Login;
 import dai.educate.model.LoginRequest;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.payload.response.JwtAuthenticationResponseRole;
 import dai.educate.repository.ChildRepository;
+import dai.educate.repository.InstitutionRepository;
 import dai.educate.repository.LoginRepository;
+import dai.educate.security.CustomUserDetailsService;
 import dai.educate.security.JwtTokenProvider;
 import dai.educate.util.CookieUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +34,13 @@ public class AuthService {
     protected final Logger log = Logger.getLogger(String.valueOf(this.getClass()));
 
     @Autowired
+    CustomUserDetailsService customUserDetailsService;
+
+    @Autowired
     LoginRepository loginRepository;
 
+    @Autowired
+    InstitutionRepository institutionRepository;
 
     AuthenticationManager authenticationManager;
 
@@ -43,8 +51,8 @@ public class AuthService {
     JwtTokenProvider tokenProvider;
 
 
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest,
-                                              HttpServletResponse response) {
+
+    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, HttpServletResponse response) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
         try {
@@ -57,33 +65,35 @@ public class AuthService {
             String jwt = tokenProvider.generateToken(authentication);
             CookieUtils.addCookie(response, "token", jwt, 604800000);
 
-            if (user.getRole().getIdRole()==2){
+            if (user.getRole().getIdRole() == 1) {
 
                 Child child = childRepository.findDistinctByLogin(user);
                 return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, child.getIdChild()));
+            } else {
+                Institution institution = institutionRepository.findDistinctByLogin(user);
+                return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, institution.getIdInstitution()));
             }
         }
         catch (ResourceNotFoundException e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Login not found"),
                     HttpStatus.INTERNAL_SERVER_ERROR);
+
+
         }
-//
-
-
-    public ResponseEntity<ApiResponse> logoutUser(HttpServletRequest request;
-        , HttpServletResponse response) {
-
-            System.out.println(CookieUtils.getCookie(request,"token"));
-        boolean isOK = CookieUtils.deleteCookie(request, response, "token");
-        System.out.println(isOK);
-
-        if (isOK == true) {
-            return ResponseEntity.ok().body(new ApiResponse(true, "User logged out successfully"));
-        }
-
-        return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Must be logged in to logout"),
-                HttpStatus.PRECONDITION_FAILED);
     }
+
+        public ResponseEntity<ApiResponse> logoutUser(HttpServletRequest request,
+                                                      HttpServletResponse response) {
+            System.out.println(CookieUtils.getCookie(request,"token"));
+            boolean isOK = CookieUtils.deleteCookie(request, response, "token");
+            System.out.println(isOK);
+
+            if (isOK == true) {
+                return ResponseEntity.ok().body(new ApiResponse(true, "User logged out successfully"));
+            }
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Must be logged in to logout"),
+                    HttpStatus.PRECONDITION_FAILED);
+        }
+
 }
-}
-*/

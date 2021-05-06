@@ -1,7 +1,6 @@
 package dai.educate.repository;
 
 import dai.educate.model.Login;
-import dai.educate.model.Prochild_collab;
 import dai.educate.model.Psychologist;
 import org.springframework.data.jpa.repository.JpaRepository;
 

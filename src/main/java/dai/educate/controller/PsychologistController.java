@@ -67,7 +67,7 @@ public class PsychologistController {
                         new ApiResponse(false, "Password tem de conter entre 6 e 24 characters"),
                         HttpStatus.BAD_REQUEST);
             }
-            if(!(role.getIdRole() ==1)){
+            if(!(role.getIdRole() ==6)){
                 return new ResponseEntity<ApiResponse>(
                         new ApiResponse(false, "Role inválido"),
                         HttpStatus.BAD_REQUEST);

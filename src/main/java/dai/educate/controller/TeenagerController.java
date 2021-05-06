@@ -70,7 +70,7 @@ public class TeenagerController {
                         new ApiResponse(false, "Password tem de conter entre 6 e 24 characters"),
                         HttpStatus.BAD_REQUEST);
             }
-            if(!(role.getIdRole() ==1)){
+            if(!(role.getIdRole() ==2)){
                 return new ResponseEntity<ApiResponse>(
                         new ApiResponse(false, "Role inválido"),
                         HttpStatus.BAD_REQUEST);

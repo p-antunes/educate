@@ -42,6 +42,7 @@ public class FamilyController {
     public Family findFamily(/*@CurrentUser UserPrincipal currentUser*/ @PathVariable long idFamily) {
         return familyRepository.findDistinctByIdFamily(idFamily);
     }
+
     @PostMapping("/family") // Creat account
     public ResponseEntity<ApiResponse> saveFamily(@RequestBody CreateFamily family) {
         try {
@@ -72,7 +73,7 @@ public class FamilyController {
                         new ApiResponse(false, "Password tem de conter entre 6 e 24 characters"),
                         HttpStatus.BAD_REQUEST);
             }
-            if(!(role.getIdRole() ==1)){
+            if(!(role.getIdRole() ==3)){
                 return new ResponseEntity<ApiResponse>(
                         new ApiResponse(false, "Role inválido"),
                         HttpStatus.BAD_REQUEST);

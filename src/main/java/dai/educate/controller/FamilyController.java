@@ -85,7 +85,6 @@ public class FamilyController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
-            // Create Child
             Family newFamily = new Family(null,name,birthDate,city,county, postalCode,address,phoneNr, log);
             familyRepository.save(newFamily);
 

@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+@RestController
+@RequestMapping(value = "/api")
 public class InstitutionController {
     @Autowired
     InstitutionRepository institutionRepository;
@@ -78,7 +80,6 @@ public class InstitutionController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
-            // Create Child
             Institution newInstitution = new Institution(null,name,phoneNr,city,county, postalCode,address, log);
             institutionRepository.save(newInstitution);
 

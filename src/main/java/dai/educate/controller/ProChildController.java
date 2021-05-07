@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+@RestController
+@RequestMapping(value = "/api")
 public class ProChildController {
 
     @Autowired
@@ -80,7 +82,7 @@ public class ProChildController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
-            // Create Child
+
             ProChild newProChild = new ProChild(null,name,phoneNr,birthDate,city,county, postalCode,address, log);
             prochildRepository.save(newProChild);
 

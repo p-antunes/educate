@@ -30,7 +30,7 @@ public class InstitutionController {
     LoginRepository loginRepository;
 
     //@PreAuthorize("hasRole('') or hasRole('')")
-    @GetMapping("/children")
+    @GetMapping("/institution")
     public List<Institution> listInstitution(@CurrentUser UserPrincipal currentUser) {
         return institutionRepository.findAll();
     }

@@ -43,7 +43,7 @@ public class ProChildController {
     @PostMapping("/prochilds") // Creat account
     public ResponseEntity<ApiResponse> saveProChild(@RequestBody CreateProChild prochild) {
         try {
-            // Activity Attributes
+
             String email = prochild.getEmail();
             String password = prochild.getPassword();
             String confirmPassword = prochild.getConfirmPassword();

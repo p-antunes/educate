@@ -46,7 +46,7 @@ public class FamilyController {
     @PostMapping("/family") // Creat account
     public ResponseEntity<ApiResponse> saveFamily(@RequestBody CreateFamily family) {
         try {
-            // Activity Attributes
+
             String email = family.getEmail();
             String password = family.getPassword();
             String confirmPassword = family.getConfirmPassword();

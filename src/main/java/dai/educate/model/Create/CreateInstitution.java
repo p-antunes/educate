@@ -25,7 +25,6 @@ public class CreateInstitution {
     private String confirmPassword;
 
     @NotBlank(message = "Can't be blank")
-    @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces")
     private String name;
 
     private String city;
@@ -36,7 +35,6 @@ public class CreateInstitution {
 
 
     public CreateInstitution(@NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")") String address, @Email(message = "Insert a valid email") String email, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String password, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number") String confirmPassword, @NotBlank(message = "Can't be blank") @Pattern(regexp = ConstantUtils.CHAR_PATTERN, message = "Can only letters, letters with special characters and spaces") String name, String city, String county, String postalCode, String phoneNr, Role role) {
-        this.address = address;
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;
@@ -44,6 +42,7 @@ public class CreateInstitution {
         this.city = city;
         this.county = county;
         this.postalCode = postalCode;
+        this.address = address;
         this.phoneNr = phoneNr;
         this.role = role;
     }

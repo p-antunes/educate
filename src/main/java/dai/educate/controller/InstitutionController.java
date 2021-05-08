@@ -30,19 +30,19 @@ public class InstitutionController {
     LoginRepository loginRepository;
 
     //@PreAuthorize("hasRole('') or hasRole('')")
-    @GetMapping("/institution")
+    @GetMapping("/institutions")
     public List<Institution> listInstitution(@CurrentUser UserPrincipal currentUser) {
         return institutionRepository.findAll();
     }
 
-    @GetMapping("/institution/{idInstitution}")
+    @GetMapping("/institutions/{idInstitution}")
     public Institution findInstitution(/*@CurrentUser UserPrincipal currentUser*/ @PathVariable long idInstitution) {
         return institutionRepository.findDistinctByIdInstitution(idInstitution);
     }
-    @PostMapping("/institution") // Creat account
+    @PostMapping("/institutions") // Creat account
     public ResponseEntity<ApiResponse> saveInstitution(@RequestBody CreateInstitution institution) {
         try {
-            // Activity Attributes
+
             String email = institution.getEmail();
             String password = institution.getPassword();
             String confirmPassword = institution.getConfirmPassword();
@@ -68,7 +68,7 @@ public class InstitutionController {
                         new ApiResponse(false, "Password tem de conter entre 6 e 24 characters"),
                         HttpStatus.BAD_REQUEST);
             }
-            if(!(role.getIdRole() ==4)){
+            if(!(role.getIdRole() == 4)){
                 return new ResponseEntity<ApiResponse>(
                         new ApiResponse(false, "Role inválido"),
                         HttpStatus.BAD_REQUEST);

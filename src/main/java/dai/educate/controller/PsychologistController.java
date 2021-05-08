@@ -42,7 +42,7 @@ public class PsychologistController {
     @PostMapping("/psychologists") // Creat account
     public ResponseEntity<ApiResponse> savePsychologist(@RequestBody CreatePsychologist psychologist) {
         try {
-            // Activity Attributes
+
             String email = psychologist.getEmail();
             String password = psychologist.getPassword();
             String confirmPassword = psychologist.getConfirmPassword();
@@ -81,7 +81,7 @@ public class PsychologistController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
-            // Create Child
+            // Create
             Psychologist newPsychologist = new Psychologist(null,name,birthDate,phoneNr,city,county, postalCode,address, log);
             psychologistRepository.save(newPsychologist);
 

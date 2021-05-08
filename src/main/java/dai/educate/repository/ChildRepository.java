@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface ChildRepository extends JpaRepository<Child, Long> {
 
-    Child findDistinctByIdChild(Long id_child);
+    Child findDistinctByIdChild(Long idChild);
 
     Child findDistinctByLogin(Login login);
 

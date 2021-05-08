@@ -44,7 +44,7 @@ public class ChildController {
     @PostMapping("/children") // Creat account
     public ResponseEntity<ApiResponse> saveChild(@RequestBody CreateChild child) {
         try {
-            // Activity Attributes
+
             String email = child.getEmail();
             String password = child.getPassword();
             String confirmPassword = child.getConfirmPassword();

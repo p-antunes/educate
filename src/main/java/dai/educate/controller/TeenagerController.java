@@ -44,7 +44,7 @@ public class TeenagerController {
     @PostMapping("/teenagers") // Creat account
     public ResponseEntity<ApiResponse> savePsychologist(@RequestBody CreateTeenager teenager) {
         try {
-            // Activity Attributes
+
             String email = teenager.getEmail();
             String password = teenager.getPassword();
             String confirmPassword = teenager.getConfirmPassword();
@@ -84,7 +84,7 @@ public class TeenagerController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
-            // Create Child
+
             Teenager newTeenager = new Teenager(null,name,birthDate,phoneNr,city,county, postalCode,address,school, log);
             teenagerRepository.save(newTeenager);
 

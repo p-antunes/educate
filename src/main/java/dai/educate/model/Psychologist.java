@@ -19,7 +19,7 @@ public class Psychologist {
     private String name;
 
     @Temporal(TemporalType.DATE)
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birthDate;
 
     private String phoneNr;
@@ -31,7 +31,6 @@ public class Psychologist {
     @ManyToOne
     @JoinColumn(name = "idLogin", referencedColumnName = "idLogin", nullable = false)
     private Login login;
-
 
     public Psychologist(Long idPsychologist, @NotBlank(message = "Can't be blank") String name, Date birthDate, String phoneNr, String city, String county, String postalCode, String address, Login login) {
         this.idPsychologist = idPsychologist;
@@ -120,3 +119,5 @@ public class Psychologist {
         this.login = login;
     }
 }
+
+

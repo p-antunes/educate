@@ -49,9 +49,10 @@ public class ReportController {
     @PostMapping("/reports")
     public ResponseEntity<ApiResponse> saveReport(@CurrentUser UserPrincipal currentUser, @RequestBody CreateReport rep) {
         try {
+
             String email = currentUser.getEmail();
             Role role = loginRepository.findDistinctByEmail(email).getRole();
-            Long idUser = loginRepository.findDistinctByEmail(email).getIdLogin();
+            Long idUser = currentUser.getId();
             Date date = new Date(System.currentTimeMillis());
 
             String title = rep.getTitle();

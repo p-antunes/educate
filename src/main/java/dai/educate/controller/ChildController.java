@@ -6,8 +6,8 @@ import dai.educate.model.Create.CreateChild;
 import dai.educate.model.Login;
 
 import dai.educate.model.Role;
-import dai.educate.model.custom.updateEmail;
-import dai.educate.model.custom.updatePassword;
+import dai.educate.model.Update.updateEmail;
+import dai.educate.model.Update.updatePassword;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.ChildRepository;
 import dai.educate.repository.LoginRepository;

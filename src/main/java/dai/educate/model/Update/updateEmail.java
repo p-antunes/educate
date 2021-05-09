@@ -1,4 +1,4 @@
-package dai.educate.model.custom;
+package dai.educate.model.Update;
 
 import javax.validation.constraints.Email;
 

@@ -1,14 +1,12 @@
 package dai.educate.controller;
 
 
-import dai.educate.model.Child;
-import dai.educate.model.Create.CreateChild;
 import dai.educate.model.Create.CreateFamily;
 import dai.educate.model.Family;
 import dai.educate.model.Login;
 import dai.educate.model.Role;
-import dai.educate.model.custom.updateEmail;
-import dai.educate.model.custom.updatePassword;
+import dai.educate.model.Update.updateEmail;
+import dai.educate.model.Update.updatePassword;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.FamilyRepository;
 import dai.educate.repository.LoginRepository;
@@ -17,7 +15,6 @@ import dai.educate.security.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 

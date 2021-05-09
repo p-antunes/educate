@@ -1,9 +1,8 @@
-package dai.educate.model.custom;
+package dai.educate.model.Update;
 
 
 import dai.educate.util.ConstantUtils;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 

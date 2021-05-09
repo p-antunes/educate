@@ -15,5 +15,4 @@ public interface RightRepository extends JpaRepository<Rights, Long> {
 
     List<Rights> findAll();
 
-
 }

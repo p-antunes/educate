@@ -54,7 +54,7 @@ public class VideoRightController {
 
             videoRightRepository.delete(videoRight);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idVideo),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Video Right deleted.", idVideo),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

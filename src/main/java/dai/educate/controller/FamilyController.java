@@ -104,7 +104,7 @@ public class FamilyController {
 
             familyRepository.delete(family);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idFamily),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Family deleted.", idFamily),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

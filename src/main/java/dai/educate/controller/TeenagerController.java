@@ -104,7 +104,7 @@ public class TeenagerController {
 
             teenagerRepository.delete(teenager);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idTeenager),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Teenager deleted.", idTeenager),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

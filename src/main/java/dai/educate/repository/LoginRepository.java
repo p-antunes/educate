@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public interface LoginRepository extends JpaRepository<Login, Long> {
 
-    Login findDistinctByIdLogin(Long idLogin);
+    Login findDistinctByIdLogin(long id_login);
 
     @Override
     Optional<Login> findById(Long aLong);

@@ -36,7 +36,7 @@ public class ProChildController {
         return prochildRepository.findAll();
     }
 
-    @GetMapping("/prochilds/{idCollab}")
+    @GetMapping("/prochilds/{idProChild}")
     public ProChild findProChild(/*@CurrentUser UserPrincipal currentUser*/ @PathVariable long idProChild) {
        return prochildRepository.findDistinctByIdProChild(idProChild);
     }
@@ -95,14 +95,14 @@ public class ProChildController {
         }
     }
 
-    @DeleteMapping("/prochilds/{idCollab}")
+    @DeleteMapping("/prochilds/{idProChild}")
     public ResponseEntity<ApiResponse> deleteProChild(@PathVariable (value="idProChild")long idProChild) {
         try {
             ProChild prochild = prochildRepository.findDistinctByIdProChild(idProChild);
 
             prochildRepository.delete(prochild);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idProChild),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "ProChild deleted.", idProChild),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

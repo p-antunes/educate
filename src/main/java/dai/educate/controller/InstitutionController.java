@@ -99,7 +99,7 @@ public class InstitutionController {
 
             institutionRepository.delete(institution);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idInstitution),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Institution deleted.", idInstitution),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

@@ -101,7 +101,7 @@ public class PsychologistController {
 
             psychologistRepository.delete(psychologist);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idPsychologist),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Psychologist deleted.", idPsychologist),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

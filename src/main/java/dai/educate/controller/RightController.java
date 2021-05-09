@@ -46,8 +46,8 @@ public class RightController {
         }
     }
 
-    @DeleteMapping("/rights/{id_right}")
-    public ResponseEntity<ApiResponse> deleteRight(@PathVariable (value="idRight")long idRight) {
+    @DeleteMapping("/rights/{idRight}")
+    public ResponseEntity<ApiResponse> deleteRight(@PathVariable(value = "idRight") long idRight) {
         try {
             Rights right = rightRepository.findByIdRight(idRight);
 

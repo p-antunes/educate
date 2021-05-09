@@ -103,7 +103,7 @@ public class ChildController {
 
             childRepository.delete(child);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Right deleted.", idChild),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "child deleted.", idChild),
                     HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),

@@ -34,6 +34,9 @@ public class AuthService {
     protected final Logger log = Logger.getLogger(String.valueOf(this.getClass()));
 
     @Autowired
+    AuthenticationManager authenticationManager;
+
+    @Autowired
     CustomUserDetailsService customUserDetailsService;
 
     @Autowired
@@ -41,8 +44,6 @@ public class AuthService {
 
     @Autowired
     InstitutionRepository institutionRepository;
-
-    AuthenticationManager authenticationManager;
 
     @Autowired
     ChildRepository childRepository;

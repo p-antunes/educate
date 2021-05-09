@@ -7,6 +7,8 @@ import dai.educate.model.Create.CreateFamily;
 import dai.educate.model.Family;
 import dai.educate.model.Login;
 import dai.educate.model.Role;
+import dai.educate.model.custom.updateEmail;
+import dai.educate.model.custom.updatePassword;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.FamilyRepository;
 import dai.educate.repository.LoginRepository;
@@ -106,6 +108,92 @@ public class FamilyController {
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Family deleted.", idFamily),
                     HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PutMapping("/family/{idFamily}/password")
+    public ResponseEntity<ApiResponse> updateFamilyPassword(@PathVariable (value="idFamily")long idFamily, @RequestBody updatePassword update) {
+        try {
+            if(familyRepository.findDistinctByIdFamily(idFamily).equals(null)){
+                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                        HttpStatus.BAD_REQUEST);
+            }
+
+            String oldPassword = update.getOldPassword();
+            String newPassword = update.getPassword();
+            String confirmPassword = update.getConfirmPassword();
+
+
+            if(oldPassword.equals(newPassword)){
+                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords repetidas."),
+                        HttpStatus.BAD_REQUEST);
+            }
+
+            if (!confirmPassword.equals(newPassword)) {
+                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords não são iguais."),
+                        HttpStatus.BAD_REQUEST);
+            }
+            if (newPassword.length() < 6 || newPassword.length() > 24) {
+                return new ResponseEntity<ApiResponse>(
+                        new ApiResponse(false, "Password must contain between 6 to 24 characters"),
+                        HttpStatus.BAD_REQUEST);
+            }
+
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String hashedPassword = passwordEncoder.encode(newPassword);
+            long idLogin = familyRepository.findDistinctByIdFamily(idFamily).getLogin().getIdLogin();
+
+            loginRepository.updateLoginPassword(hashedPassword,idLogin);
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Password updated.", idFamily),
+                    HttpStatus.CREATED);
+            //User userLogged = userRepository.findByUserId(currentUser.getId());
+            //Set<Role> roleUserLogged = userLogged.getRoles();
+
+            // Get Permissions
+        /*if (String.valueOf(roleUserLogged).equals("[Role [id=0]]")
+                || String.valueOf(roleUserLogged).equals("[Role [id=1]]")) {
+            return alertLogRepository.findAlertLogsByPrison(userLogged.getPrison());
+        }*/
+        } catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PutMapping("/family/{idFamily}")
+    public ResponseEntity<ApiResponse> updateFamilyEmail(@PathVariable (value="idFamily")long idFamily, @RequestBody updateEmail update) {
+        try {
+            if(familyRepository.findDistinctByIdFamily(idFamily).equals(null)){
+                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                        HttpStatus.BAD_REQUEST);
+            }
+
+            String email = update.getEmail();
+
+
+            if(email.trim().equals("")){
+                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Email inválido."),
+                        HttpStatus.BAD_REQUEST);
+            }
+
+            long idLogin = familyRepository.findDistinctByIdFamily(idFamily).getLogin().getIdLogin();
+
+            loginRepository.updateLoginEmail(email,idLogin);
+
+            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Email updated.", idFamily),
+                    HttpStatus.CREATED);
+            //User userLogged = userRepository.findByUserId(currentUser.getId());
+            //Set<Role> roleUserLogged = userLogged.getRoles();
+
+            // Get Permissions
+        /*if (String.valueOf(roleUserLogged).equals("[Role [id=0]]")
+                || String.valueOf(roleUserLogged).equals("[Role [id=1]]")) {
+            return alertLogRepository.findAlertLogsByPrison(userLogged.getPrison());
+        }*/
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
                     HttpStatus.BAD_REQUEST);

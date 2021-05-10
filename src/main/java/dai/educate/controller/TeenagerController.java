@@ -1,16 +1,13 @@
 package dai.educate.controller;
 
-import dai.educate.model.Create.CreatePsychologist;
 import dai.educate.model.Create.CreateTeenager;
 import dai.educate.model.Login;
-import dai.educate.model.Psychologist;
 import dai.educate.model.Role;
 import dai.educate.model.Teenager;
-import dai.educate.model.custom.updateEmail;
-import dai.educate.model.custom.updatePassword;
+import dai.educate.model.Update.updateEmail;
+import dai.educate.model.Update.updatePassword;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.LoginRepository;
-import dai.educate.repository.PsychologistRepository;
 import dai.educate.repository.TeenagerRepository;
 import dai.educate.security.CurrentUser;
 import dai.educate.security.UserPrincipal;

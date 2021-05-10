@@ -27,26 +27,29 @@ public class Report {
     @NotNull(message = "Can't be null")
     private String description;
 
+    private String name;
+
     @Email(message = "Insert a valid email")
     private String email;
 
     private String phoneNr;
 
-    private String council;
+    private String county;
 
     private String city;
 
     private String address;
 
 
-    public Report(Long idReport, Date reportDate, @NotNull(message = "Can't be null") String title, @NotNull(message = "Can't be null") String description, @Email(message = "Insert a valid email") String email, String phoneNr, String council, String city, String address) {
+    public Report(Long idReport, Date reportDate, @NotNull(message = "Can't be null") String title, @NotNull(message = "Can't be null") String description, String name, @Email(message = "Insert a valid email") String email, String phoneNr, String county, String city, String address) {
         this.idReport = idReport;
         this.reportDate = reportDate;
         this.title = title;
         this.description = description;
+        this.name = name;
         this.email = email;
         this.phoneNr = phoneNr;
-        this.council = council;
+        this.county = county;
         this.city = city;
         this.address = address;
     }
@@ -86,6 +89,14 @@ public class Report {
         this.description = description;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -102,12 +113,12 @@ public class Report {
         this.phoneNr = phoneNr;
     }
 
-    public String getCouncil() {
-        return council;
+    public String getCounty() {
+        return county;
     }
 
-    public void setCouncil(String council) {
-        this.council = council;
+    public void setCounty(String county) {
+        this.county = county;
     }
 
     public String getCity() {

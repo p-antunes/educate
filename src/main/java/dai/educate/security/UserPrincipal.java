@@ -30,8 +30,8 @@ public class UserPrincipal implements UserDetails {
     private final Collection<? extends GrantedAuthority> grantedAuthorities;
     // private GrantedAuthority authorities;
 
-    public UserPrincipal(Long id,/* String name,*/ String email, String password,
-            /*GrantedAuthority authorities*/ boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialNonExpired, boolean isEnabled, Collection<? extends GrantedAuthority> grantedAuthorities) {
+    public UserPrincipal(Long id, String email, String password,
+            boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialNonExpired, boolean isEnabled, Collection<? extends GrantedAuthority> grantedAuthorities) {
         this.id = id;
         //this.name = name;
         this.email = email;

@@ -1,15 +1,10 @@
 package dai.educate.service;
 
 import dai.educate.exception.ResourceNotFoundException;
-import dai.educate.model.Child;
-import dai.educate.model.Institution;
-import dai.educate.model.Login;
-import dai.educate.model.LoginRequest;
+import dai.educate.model.*;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.payload.response.JwtAuthenticationResponseRole;
-import dai.educate.repository.ChildRepository;
-import dai.educate.repository.InstitutionRepository;
-import dai.educate.repository.LoginRepository;
+import dai.educate.repository.*;
 import dai.educate.security.CustomUserDetailsService;
 import dai.educate.security.JwtTokenProvider;
 import dai.educate.util.CookieUtils;
@@ -43,10 +38,22 @@ public class AuthService {
     LoginRepository loginRepository;
 
     @Autowired
+    ChildRepository childRepository;
+
+    @Autowired
+    TeenagerRepository teenagerRepository;
+
+    @Autowired
+    FamilyRepository familyRepository;
+
+    @Autowired
     InstitutionRepository institutionRepository;
 
     @Autowired
-    ChildRepository childRepository;
+    ProchildRepository prochildRepository;
+
+    @Autowired
+    PsychologistRepository psychologistRepository;
 
     @Autowired
     JwtTokenProvider tokenProvider;
@@ -70,15 +77,31 @@ public class AuthService {
 
                 Child child = childRepository.findDistinctByLogin(user);
                 return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, child.getIdChild()));
-            } else {
+            }
+            if(user.getRole().getIdRole() == 2) {
+                Teenager teen = teenagerRepository.findDistinctByLogin(user);
+                return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, teen.getIdTeenager()));
+            }
+            if (user.getRole().getIdRole() == 3) {
+                Family family = familyRepository.findDistinctByLogin(user);
+                return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, family.getIdFamily()));
+            }
+            if (user.getRole().getIdRole() == 4) {
                 Institution institution = institutionRepository.findDistinctByLogin(user);
                 return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, institution.getIdInstitution()));
+            }
+            if(user.getRole().getIdRole() == 5){
+                ProChild prochild = prochildRepository.findDistinctByLogin(user);
+                return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, prochild.getIdProChild()));
+            }
+            else{
+                Psychologist psychologist = psychologistRepository.findDistinctByLogin(user);
+                return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, psychologist.getIdPsychologist()));
             }
         }
         catch (ResourceNotFoundException e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Login not found"),
                     HttpStatus.INTERNAL_SERVER_ERROR);
-
 
         }
     }

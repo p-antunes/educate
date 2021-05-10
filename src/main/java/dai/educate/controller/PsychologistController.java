@@ -2,11 +2,10 @@ package dai.educate.controller;
 
 import dai.educate.model.Create.CreatePsychologist;
 import dai.educate.model.Login;
-import dai.educate.model.ProChild;
 import dai.educate.model.Psychologist;
 import dai.educate.model.Role;
-import dai.educate.model.custom.updateEmail;
-import dai.educate.model.custom.updatePassword;
+import dai.educate.model.Update.updateEmail;
+import dai.educate.model.Update.updatePassword;
 import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.LoginRepository;
 import dai.educate.repository.PsychologistRepository;

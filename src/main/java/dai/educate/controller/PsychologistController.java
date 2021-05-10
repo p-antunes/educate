@@ -119,15 +119,8 @@ public class PsychologistController {
                         HttpStatus.BAD_REQUEST);
             }
 
-            String oldPassword = update.getOldPassword();
             String newPassword = update.getPassword();
             String confirmPassword = update.getConfirmPassword();
-
-
-            if (oldPassword.equals(newPassword)) {
-                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords repetidas."),
-                        HttpStatus.BAD_REQUEST);
-            }
 
             if (!confirmPassword.equals(newPassword)) {
                 return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords não são iguais."),

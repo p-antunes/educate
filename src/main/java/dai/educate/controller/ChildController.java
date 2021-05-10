@@ -116,20 +116,13 @@ public class ChildController {
     @PutMapping("/children/{idChild}/password")
     public ResponseEntity<ApiResponse> updateChildPassword(@PathVariable (value="idChild")long idChild, @RequestBody updatePassword update) {
         try {
-            if(childRepository.findDistinctByIdChild(idChild).equals(null)){
+            if(childRepository.findDistinctByIdChild(idChild).equals(null)) {
                 return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
                         HttpStatus.BAD_REQUEST);
             }
 
-            String oldPassword = update.getOldPassword();
             String newPassword = update.getPassword();
             String confirmPassword = update.getConfirmPassword();
-
-
-            if(oldPassword.equals(newPassword)){
-                return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords repetidas."),
-                        HttpStatus.BAD_REQUEST);
-            }
 
             if (!confirmPassword.equals(newPassword)) {
                 return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords não são iguais."),

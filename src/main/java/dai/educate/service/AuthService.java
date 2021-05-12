@@ -59,7 +59,6 @@ public class AuthService {
     JwtTokenProvider tokenProvider;
 
 
-
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, HttpServletResponse response) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
@@ -73,8 +72,9 @@ public class AuthService {
             String jwt = tokenProvider.generateToken(authentication);
             CookieUtils.addCookie(response, "token", jwt, 604800000);
 
-            if (user.getRole().getIdRole() == 1) {
+            System.out.println(user.getRole().getIdRole());
 
+            if (user.getRole().getIdRole() == 1) {
                 Child child = childRepository.findDistinctByLogin(user);
                 return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, child.getIdChild()));
             }
@@ -93,31 +93,29 @@ public class AuthService {
             if(user.getRole().getIdRole() == 5){
                 ProChild prochild = prochildRepository.findDistinctByLogin(user);
                 return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, prochild.getIdProChild()));
-            }
-            else{
+            } else{
                 Psychologist psychologist = psychologistRepository.findDistinctByLogin(user);
                 return ResponseEntity.ok(new JwtAuthenticationResponseRole(jwt, roleString, psychologist.getIdPsychologist()));
             }
-        }
-        catch (ResourceNotFoundException e) {
+        } catch (ResourceNotFoundException e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Login not found"),
                     HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
     }
 
-        public ResponseEntity<ApiResponse> logoutUser(HttpServletRequest request,
-                                                      HttpServletResponse response) {
-            System.out.println(CookieUtils.getCookie(request,"token"));
-            boolean isOK = CookieUtils.deleteCookie(request, response, "token");
-            System.out.println(isOK);
+    public ResponseEntity<ApiResponse> logoutUser(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println(CookieUtils.getCookie(request,"token"));
+        boolean isOK = CookieUtils.deleteCookie(request, response, "token");
+        boolean isOK1 =CookieUtils.deleteCookie(request, response, "role");
+        System.out.println(isOK);
 
-            if (isOK == true) {
-                return ResponseEntity.ok().body(new ApiResponse(true, "User logged out successfully"));
-            }
-
-            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Must be logged in to logout"),
-                    HttpStatus.PRECONDITION_FAILED);
+        if (isOK == true) {
+            return ResponseEntity.ok().body(new ApiResponse(true, "User logged out successfully"));
         }
+
+        return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Must be logged in to logout"),
+                HttpStatus.PRECONDITION_FAILED);
+    }
 
 }

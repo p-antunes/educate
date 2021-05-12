@@ -79,8 +79,12 @@ public class InstitutionController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
+            System.out.println(log);
+
             Institution newInstitution = new Institution(null,name,phoneNr,city,county, postalCode,address, log);
             institutionRepository.save(newInstitution);
+
+
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Conta criada com sucesso"),
                     HttpStatus.CREATED);

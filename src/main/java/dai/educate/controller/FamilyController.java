@@ -32,17 +32,17 @@ public class FamilyController {
     LoginRepository loginRepository;
 
     //@PreAuthorize("hasRole('') or hasRole('') ")
-    @GetMapping("/family")
+    @GetMapping("/families")
     public List<Family> listChildren(@CurrentUser UserPrincipal currentUser) {
         return familyRepository.findAll();
     }
 
-    @GetMapping("/family/{idFamily}")
+    @GetMapping("/families/{idFamily}")
     public Family findFamily(/*@CurrentUser UserPrincipal currentUser*/ @PathVariable long idFamily) {
         return familyRepository.findDistinctByIdFamily(idFamily);
     }
 
-    @PostMapping("/family") // Creat account
+    @PostMapping("/families") // Creat account
     public ResponseEntity<ApiResponse> saveFamily(@RequestBody CreateFamily family) {
         try {
 
@@ -96,7 +96,7 @@ public class FamilyController {
         }
     }
 
-    @DeleteMapping("/family/{idFamily}")
+    @DeleteMapping("/families/{idFamily}")
     public ResponseEntity<ApiResponse> deleteFamily(@PathVariable (value="idFamily")long idFamily) {
         try {
             Family family = familyRepository.findDistinctByIdFamily(idFamily);
@@ -111,7 +111,7 @@ public class FamilyController {
         }
     }
 
-    @PutMapping("/family/{idFamily}/password")
+    @PutMapping("/families/{idFamily}/password")
     public ResponseEntity<ApiResponse> updateFamilyPassword(@PathVariable (value="idFamily")long idFamily, @RequestBody updatePassword update) {
         try {
             if(familyRepository.findDistinctByIdFamily(idFamily).equals(null)){
@@ -154,7 +154,7 @@ public class FamilyController {
         }
     }
 
-    @PutMapping("/family/{idFamily}")
+    @PutMapping("/families/{idFamily}")
     public ResponseEntity<ApiResponse> updateFamilyEmail(@PathVariable (value="idFamily")long idFamily, @RequestBody updateEmail update) {
         try {
             if(familyRepository.findDistinctByIdFamily(idFamily).equals(null)){

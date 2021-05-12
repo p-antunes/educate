@@ -79,7 +79,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         try {
             Login user = loginRepository.findDistinctByIdLogin(idLogin);
 
-            if (user.getRole().getIdRole() == 1) {
+            if(user.getRole().getIdRole() == 1) {
                 Child child = childRepository.findDistinctByLogin(user);
                 return UserPrincipal.create(child.getIdChild(), user.getEmail(), user.getPassword(), user.getRole().getName().name());
             }

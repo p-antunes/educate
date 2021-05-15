@@ -101,5 +101,19 @@ public class ReportController {
         }
 
     }
+
+    @PostMapping("/reports/anonymous")
+    public ResponseEntity<ApiResponse> saveReportAnon(@RequestBody CreateReport rep){
+
+        String title = rep.getTitle();
+        String description = rep.getDescription();
+        Date date = new Date(System.currentTimeMillis());
+
+        Report newReport = new Report(null, date, title, description, null, null, null, null, null, null);
+        reportRepository.save(newReport);
+
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Report created"), HttpStatus.CREATED);
+
+    }
 }
 

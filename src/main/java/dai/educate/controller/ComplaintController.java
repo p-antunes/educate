@@ -35,6 +35,9 @@ public class ComplaintController {
     @Autowired
     FamilyRepository familyRepository;
 
+    @Autowired
+    InstitutionRepository institutionRepository;
+
     @GetMapping("/complaints")
     public List<Complaint> listComplaint() {
         return complaintRepository.findAll();
@@ -64,23 +67,23 @@ public class ComplaintController {
                 String address = childRepository.findDistinctByIdChild(idUser).getAddress();
                 String postCode = childRepository.findDistinctByIdChild(idUser).getPostalCode();
 
-                Complaint newComplaint = new Complaint(null,date, title, complaint, name, null, county,city,address, postCode);
+                Complaint newComplaint = new Complaint(null, date, title, complaint, name, null, county, city, address, postCode);
                 complaintRepository.save(newComplaint);
 
-                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Report created"), HttpStatus.CREATED);
+                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"), HttpStatus.CREATED);
             }
             if (role.getIdRole() == 2) {
                 String name = teenagerRepository.findDistinctByIdTeenager(idUser).getName();
                 String county = teenagerRepository.findDistinctByIdTeenager(idUser).getCounty();
-                String city= teenagerRepository.findDistinctByIdTeenager(idUser).getCity();
-                String address= teenagerRepository.findDistinctByIdTeenager(idUser).getAddress();
+                String city = teenagerRepository.findDistinctByIdTeenager(idUser).getCity();
+                String address = teenagerRepository.findDistinctByIdTeenager(idUser).getAddress();
                 String phoneNr = teenagerRepository.findDistinctByIdTeenager(idUser).getPhoneNr();
                 String postCode = teenagerRepository.findDistinctByIdTeenager(idUser).getPostalCode();
 
-                Complaint newComplaint = new Complaint(null,date, title, complaint, name, null, county,city,address, postCode);
+                Complaint newComplaint = new Complaint(null, date, title, complaint, name, phoneNr, county, city, address, postCode);
                 complaintRepository.save(newComplaint);
 
-                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Report created"), HttpStatus.CREATED);
+                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"), HttpStatus.CREATED);
             }
             if (role.getIdRole() == 3) {
                 String name = familyRepository.findDistinctByIdFamily(idUser).getName();
@@ -93,16 +96,28 @@ public class ComplaintController {
                 Complaint newComplaint = new Complaint(null, date, title, complaint, name, phoneNr, county, city, address, postCode);
                 complaintRepository.save(newComplaint);
 
+                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"),
+                        HttpStatus.CREATED);
 
             }
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"),
-                    HttpStatus.CREATED);
+            if (role.getIdRole() == 4) {
+                String name = institutionRepository.findDistinctByIdInstitution(idUser).getName();
+                String county = institutionRepository.findDistinctByIdInstitution(idUser).getCounty();
+                String city = institutionRepository.findDistinctByIdInstitution(idUser).getCity();
+                String address = institutionRepository.findDistinctByIdInstitution(idUser).getAddress();
+                String postCode = institutionRepository.findDistinctByIdInstitution(idUser).getPostalCode();
 
+                Complaint newComplaint = new Complaint(null, date, title, complaint, name, null, county, city, address, postCode);
+                complaintRepository.save(newComplaint);
+
+                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"), HttpStatus.CREATED);
+            }
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
                     HttpStatus.BAD_REQUEST);
-        }
-    }
+        }}
 
     @DeleteMapping("/complaints/{idComplaint}")
     public ResponseEntity<ApiResponse> deleteArticle(@PathVariable (value="idComplaint")long idComplaint) {

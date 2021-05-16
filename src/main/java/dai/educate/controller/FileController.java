@@ -43,22 +43,8 @@ public class FileController {
             return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
         }
     }
-/*
-    @DeleteMapping("/files/{id}")
-    public ResponseEntity<ResponseMessage> deleteFile(@PathVariable String id) {
-        try {
-            FileDB file = storageService.getFile(id);
 
-            fileDBRepository.delete(file);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "File deleted."),
-                    HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
-                    HttpStatus.BAD_REQUEST);
-        }
-    }
-*/
 
     @GetMapping("/files")
     public ResponseEntity<List<ResponseFile>> getListFiles() {
@@ -87,21 +73,20 @@ public class FileController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileDB.getName() + "\"")
                 .body(fileDB.getData());
     }
-    /*
-    @DeleteMapping("/files/{name}")
-    public ResponseEntity<ApiResponse> deleteFile(@PathVariable (value="name")String name) {
+
+    @DeleteMapping("/files/{id}")
+    public ResponseEntity<byte[]> deleteFile(@PathVariable String id) {
         try {
-            FileDB file = fileDBRepository.findDistinctByNameFile(name);
+            FileDB fileDB = storageService.getFile(id);
 
-            fileDBRepository.delete(file);
+            fileDBRepository.delete(fileDB);
 
-            return new ResponseEntity<ApiResponse>(new ApiResponse(true, "File deleted."),
-                    HttpStatus.CREATED);
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "File deleted:\"" + fileDB.getName() + "\"")
+                    .body(fileDB.getData());
         } catch (Exception e) {
-            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
-                    HttpStatus.BAD_REQUEST);
+            return null;
         }
     }
-    */
 
 }

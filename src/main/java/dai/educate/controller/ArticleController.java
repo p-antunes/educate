@@ -36,9 +36,10 @@ public class ArticleController {
         try {
 
             String article = artic.getArticle();
+            String link = artic.getLink();
             Long idUser = currentUser.getId();
 
-            Article newArticle = new Article(null, article, idUser);
+            Article newArticle = new Article(null, article, link, idUser);
             articleRepository.save(newArticle);
 
 

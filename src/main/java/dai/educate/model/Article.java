@@ -17,12 +17,14 @@ public class Article {
 
     private String article;
 
+    private String link;
+
     private Long idUser;
 
-
-    public Article(Long idArticle, String article, Long idUser) {
+    public Article(Long idArticle, String article, String link, Long idUser) {
         this.idArticle = idArticle;
         this.article = article;
+        this.link = link;
         this.idUser = idUser;
     }
 
@@ -45,6 +47,14 @@ public class Article {
         this.article = article;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
     public Long getIdUser() {
         return idUser;
     }
@@ -53,3 +63,4 @@ public class Article {
         this.idUser = idUser;
     }
 }
+

@@ -15,14 +15,17 @@ public class Article {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idArticle;
 
+    private String title;
+
     private String article;
 
     private String link;
 
     private Long idUser;
 
-    public Article(Long idArticle, String article, String link, Long idUser) {
+    public Article(Long idArticle, String title, String article, String link, Long idUser) {
         this.idArticle = idArticle;
+        this.title = title;
         this.article = article;
         this.link = link;
         this.idUser = idUser;
@@ -37,6 +40,14 @@ public class Article {
 
     public void setIdArticle(Long idArticle) {
         this.idArticle = idArticle;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getArticle() {
@@ -63,4 +74,6 @@ public class Article {
         this.idUser = idUser;
     }
 }
+
+
 

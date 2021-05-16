@@ -190,5 +190,76 @@ public class ChildController {
                     HttpStatus.BAD_REQUEST);
         }
     }
+    /*
+    @PutMapping("/children/recover/{email}")
+    public ResponseEntity<ApiResponse> recoverPass(@PathVariable (value="email")String email) {
+        try {
+            Login log = loginRepository.findDistinctByEmail(email);
+            String oldPass = log.getPassword();
+            String password = passGenerator(8);
+
+
+
+        }
+        catch (Exception e) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+    }
+
+        try
+
+    {
+        if (childRepository.findDistinctByEmail(idChild).equals(null)) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+                    HttpStatus.BAD_REQUEST);
+        }
+
+        String newPassword = update.getPassword();
+        String confirmPassword = update.getConfirmPassword();
+
+        if (!confirmPassword.equals(newPassword)) {
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Passwords não são iguais."),
+                    HttpStatus.BAD_REQUEST);
+        }
+        if (newPassword.length() < 6 || newPassword.length() > 24) {
+            return new ResponseEntity<ApiResponse>(
+                    new ApiResponse(false, "Password must contain between 6 to 24 characters"),
+                    HttpStatus.BAD_REQUEST);
+        }
+
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(newPassword);
+        long idLogin = childRepository.findDistinctByIdChild(idChild).getLogin().getIdLogin();
+
+        loginRepository.updateLoginPassword(hashedPassword, idLogin);
+
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Password updated.", idChild),
+                HttpStatus.CREATED);
+        //User userLogged = userRepository.findByUserId(currentUser.getId());
+        //Set<Role> roleUserLogged = userLogged.getRoles();
+
+        // Get Permissions
+        /*if (String.valueOf(roleUserLogged).equals("[Role [id=0]]")
+                || String.valueOf(roleUserLogged).equals("[Role [id=1]]")) {
+            return alertLogRepository.findAlertLogsByPrison(userLogged.getPrison());
+        }
+
+
+        public String passGenerator(int passLength){
+            java.util.Random r = new java.util.Random();
+            char[] goodChar = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',
+                    'h', 'j', 'k', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
+                    'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K',
+                    'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                    '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '@', 'l' ,'L',
+                    '1', '2','ç','!','|','"','#','$','%','&','/','(',')','='};
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < passLength; i++) {
+                sb.append(goodChar[r.nextInt(goodChar.length)]);
+            }
+            return sb.toString();
+        }
+        */
 
 }

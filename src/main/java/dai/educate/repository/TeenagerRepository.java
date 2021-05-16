@@ -5,9 +5,11 @@ import dai.educate.model.Login;
 import dai.educate.model.Teenager;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface TeenagerRepository extends JpaRepository<Teenager, Long> {
 
     Teenager findDistinctByIdTeenager(Long idTeenager);

@@ -84,7 +84,8 @@ public class InstitutionController {
             Institution newInstitution = new Institution(null,name,phoneNr,city,county, postalCode,address, log);
             institutionRepository.save(newInstitution);
 
-
+            System.out.println(log);
+            System.out.println(newInstitution);
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Conta criada com sucesso"),
                     HttpStatus.CREATED);
@@ -92,6 +93,8 @@ public class InstitutionController {
         } catch (Exception e) {
             return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
                     HttpStatus.BAD_REQUEST);
+
+
         }
     }
 

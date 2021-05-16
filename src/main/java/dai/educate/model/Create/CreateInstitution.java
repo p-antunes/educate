@@ -9,12 +9,12 @@ import javax.validation.constraints.Pattern;
 
 public class CreateInstitution {
 
+    @Email(message = "Insert a valid email")
+    private String email;
+
     @NotBlank(message = "Can't be blank")
     @Pattern(regexp = ConstantUtils.ADDRESS_PATTERN, message = "Can only letters, letters with special characters, numbers and special characters (\",\", \"º\", \" \")")
     private String address;
-
-    @Email(message = "Insert a valid email")
-    private String email;
 
     @NotBlank(message = "Can't be blank")
     @Pattern(regexp = ConstantUtils.PASSWORD_PATTERN, message = "Needs at least 1 UpperCase, 1 LowerCase and 1 Number")

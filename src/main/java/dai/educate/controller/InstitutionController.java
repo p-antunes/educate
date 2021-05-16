@@ -39,19 +39,19 @@ public class InstitutionController {
         return institutionRepository.findDistinctByIdInstitution(idInstitution);
     }
     @PostMapping("/institutions") // Creat account
-    public ResponseEntity<ApiResponse> saveInstitution(@RequestBody CreateInstitution institution) {
+    public ResponseEntity<ApiResponse> saveInstitution(@RequestBody CreateInstitution institut) {
         try {
 
-            String email = institution.getEmail();
-            String password = institution.getPassword();
-            String confirmPassword = institution.getConfirmPassword();
-            String name = institution.getName();
-            String city = institution.getCity();
-            String phoneNr = institution.getPhoneNr();
-            String county = institution.getCounty();
-            String postalCode = institution.getPostalCode();
-            String address = institution.getAddress();
-            Role role = institution.getRole();
+            String email = institut.getEmail();
+            String password = institut.getPassword();
+            String confirmPassword = institut.getConfirmPassword();
+            String name = institut.getName();
+            String city = institut.getCity();
+            String phoneNr = institut.getPhoneNr();
+            String county = institut.getCounty();
+            String postalCode = institut.getPostalCode();
+            String address = institut.getAddress();
+            Role role = institut.getRole();
 
 
             if (!confirmPassword.equals(password)) {
@@ -79,19 +79,15 @@ public class InstitutionController {
             Login log = new Login(null,email,hashedPassword,role);
             loginRepository.save(log);
 
-            System.out.println(log);
 
             Institution newInstitution = new Institution(null,name,phoneNr,city,county, postalCode,address, log);
             institutionRepository.save(newInstitution);
-
-            System.out.println(log);
-            System.out.println(newInstitution);
 
             return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Conta criada com sucesso"),
                     HttpStatus.CREATED);
 
         } catch (Exception e) {
-            return new ResponseEntity<ApiResponse>(new ApiResponse(false, "Invalid data format"),
+            return new ResponseEntity<ApiResponse>(new ApiResponse(false, e.getMessage()),
                     HttpStatus.BAD_REQUEST);
 
 

@@ -10,7 +10,6 @@ public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotBlank(message = "Can't be blank")
     private Long idInstitution;
 
     @NotBlank(message = "Can't be blank")

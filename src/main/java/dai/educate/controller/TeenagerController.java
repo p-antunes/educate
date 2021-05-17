@@ -6,7 +6,7 @@ import dai.educate.model.Role;
 import dai.educate.model.Teenager;
 import dai.educate.model.Update.updateEmail;
 import dai.educate.model.Update.updatePassword;
-import dai.educate.payload.response.ApiResponse;
+import dai.educate.response.ApiResponse;
 import dai.educate.repository.LoginRepository;
 import dai.educate.repository.TeenagerRepository;
 import dai.educate.security.CurrentUser;

@@ -14,8 +14,6 @@ public class UserPrincipal implements UserDetails {
 
     private Long id;
 
-    //private String name;
-
     @JsonIgnore
     private final String email;
 
@@ -33,7 +31,6 @@ public class UserPrincipal implements UserDetails {
     public UserPrincipal(Long id, String email, String password,
             boolean isAccountNonExpired, boolean isAccountNonLocked, boolean isCredentialNonExpired, boolean isEnabled, Collection<? extends GrantedAuthority> grantedAuthorities) {
         this.id = id;
-        //this.name = name;
         this.email = email;
         this.password = password;
         this.isAccountNonExpired = isAccountNonExpired;
@@ -41,7 +38,6 @@ public class UserPrincipal implements UserDetails {
         this.isCredentialNonExpired = isCredentialNonExpired;
         this.isEnabled = isEnabled;
         this.grantedAuthorities = grantedAuthorities;
-        //this.authorities = authorities;
     }
 
     public static UserPrincipal create(long id, String email, String password, String roles) {
@@ -56,10 +52,6 @@ public class UserPrincipal implements UserDetails {
     public Long getId() {
         return id;
     }
-
-    //public String getName() {
-    //   return name;
-    //}
 
     public String getEmail() {
         return email;

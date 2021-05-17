@@ -1,11 +1,10 @@
 package dai.educate.controller;
 
 
-import dai.educate.model.Complaint;
 import dai.educate.model.Create.CreateSuggestion;
 import dai.educate.model.Role;
 import dai.educate.model.Suggestion;
-import dai.educate.payload.response.ApiResponse;
+import dai.educate.response.ApiResponse;
 import dai.educate.repository.*;
 import dai.educate.security.CurrentUser;
 import dai.educate.security.UserPrincipal;
@@ -39,6 +38,9 @@ public class SuggestionController {
 
     @Autowired
     InstitutionRepository institutionRepository;
+
+    @Autowired
+    PsychologistRepository psychologistRepository;
 
     @GetMapping("/suggestions")
     public List<Suggestion> listSuggestion() {
@@ -109,6 +111,21 @@ public class SuggestionController {
                 String postCode = institutionRepository.findDistinctByIdInstitution(idUser).getPostalCode();
 
                 Suggestion newSuggestion = new Suggestion(null, date, title, suggestion, name, null, county, city, address, postCode);
+                suggestionRepository.save(newSuggestion);
+
+
+                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Sugestão criada com sucesso."),
+                        HttpStatus.CREATED);
+            }
+            if (role.getIdRole() == 6) {
+                String name = psychologistRepository.findDistinctByIdPsychologist(idUser).getName();
+                String county = psychologistRepository.findDistinctByIdPsychologist(idUser).getCounty();
+                String city = psychologistRepository.findDistinctByIdPsychologist(idUser).getCity();
+                String address = psychologistRepository.findDistinctByIdPsychologist(idUser).getAddress();
+                String postCode = psychologistRepository.findDistinctByIdPsychologist(idUser).getPostalCode();
+                String phoneNr = psychologistRepository.findDistinctByIdPsychologist(idUser).getPhoneNr();
+
+                Suggestion newSuggestion = new Suggestion(null, date, title, suggestion, name, phoneNr, county, city, address, postCode);
                 suggestionRepository.save(newSuggestion);
 
 

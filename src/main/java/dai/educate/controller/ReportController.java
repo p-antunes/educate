@@ -3,9 +3,8 @@ package dai.educate.controller;
 import dai.educate.model.Create.CreateReport;
 import dai.educate.model.Report;
 
-import dai.educate.model.Rights;
 import dai.educate.model.Role;
-import dai.educate.payload.response.ApiResponse;
+import dai.educate.response.ApiResponse;
 import dai.educate.repository.*;
 import dai.educate.security.CurrentUser;
 import dai.educate.security.UserPrincipal;

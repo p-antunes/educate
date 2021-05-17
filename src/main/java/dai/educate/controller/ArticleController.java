@@ -2,7 +2,7 @@ package dai.educate.controller;
 
 import dai.educate.model.Article;
 
-import dai.educate.payload.response.ApiResponse;
+import dai.educate.response.ApiResponse;
 import dai.educate.repository.ArticleRepository;
 import dai.educate.security.CurrentUser;
 import dai.educate.security.UserPrincipal;

@@ -1,7 +1,7 @@
 package dai.educate.controller;
 
 import dai.educate.model.Rights;
-import dai.educate.payload.response.ApiResponse;
+import dai.educate.response.ApiResponse;
 import dai.educate.repository.RightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

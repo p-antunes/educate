@@ -2,8 +2,8 @@ package dai.educate.service;
 
 import dai.educate.exception.ResourceNotFoundException;
 import dai.educate.model.*;
-import dai.educate.payload.response.ApiResponse;
-import dai.educate.payload.response.JwtAuthenticationResponseRole;
+import dai.educate.response.ApiResponse;
+import dai.educate.response.JwtAuthenticationResponseRole;
 import dai.educate.repository.*;
 import dai.educate.security.CustomUserDetailsService;
 import dai.educate.security.JwtTokenProvider;

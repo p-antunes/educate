@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Entity
+@Entity(name = "files")
 @Table(name = "files")
 public class FileDB {
 

@@ -1,4 +1,4 @@
-package dai.educate.payload.response;
+package dai.educate.response;
 
 
 public class ApiResponse {

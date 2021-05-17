@@ -2,9 +2,8 @@ package dai.educate.controller;
 
 import dai.educate.model.Complaint;
 import dai.educate.model.Create.CreateComplaint;
-import dai.educate.model.Report;
 import dai.educate.model.Role;
-import dai.educate.payload.response.ApiResponse;
+import dai.educate.response.ApiResponse;
 import dai.educate.repository.*;
 import dai.educate.security.CurrentUser;
 import dai.educate.security.UserPrincipal;
@@ -37,6 +36,9 @@ public class ComplaintController {
 
     @Autowired
     InstitutionRepository institutionRepository;
+
+    @Autowired
+    PsychologistRepository psychologistRepository;
 
     @GetMapping("/complaints")
     public List<Complaint> listComplaint() {
@@ -108,6 +110,19 @@ public class ComplaintController {
                 String postCode = institutionRepository.findDistinctByIdInstitution(idUser).getPostalCode();
 
                 Complaint newComplaint = new Complaint(null, date, title, complaint, name, null, county, city, address, postCode);
+                complaintRepository.save(newComplaint);
+
+                return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"), HttpStatus.CREATED);
+            }
+            if (role.getIdRole() == 6) {
+                String name = psychologistRepository.findDistinctByIdPsychologist(idUser).getName();
+                String county = psychologistRepository.findDistinctByIdPsychologist(idUser).getCounty();
+                String city = psychologistRepository.findDistinctByIdPsychologist(idUser).getCity();
+                String address = psychologistRepository.findDistinctByIdPsychologist(idUser).getAddress();
+                String postCode = psychologistRepository.findDistinctByIdPsychologist(idUser).getPostalCode();
+                String phoneNr = psychologistRepository.findDistinctByIdPsychologist(idUser).getPhoneNr();
+
+                Complaint newComplaint = new Complaint(null, date, title, complaint, name, phoneNr, county, city, address, postCode);
                 complaintRepository.save(newComplaint);
 
                 return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Complaint created successfully"), HttpStatus.CREATED);

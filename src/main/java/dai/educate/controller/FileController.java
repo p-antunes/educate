@@ -3,7 +3,6 @@ package dai.educate.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import dai.educate.payload.response.ApiResponse;
 import dai.educate.repository.FileDBRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .purpleRectangle {
+    width: 183px;
+    height: 45px;
+    background: rgba(174,84,205,0.3499999940395355);
+    opacity: 1;
+    position: absolute;
+    top: 44px;
+    left: 111px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .textPsicologa {
+    width: 183px;
+    color: rgba(174,84,205,1);
+    position: absolute;
+    top: 44px;
+    left: 116px;
+    font-family: Roboto;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  .grayRectangle {
+    width: 351px;
+    height: 98px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: absolute;
+    top: 610px;
+    left: 32px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .text {
+    width: 119px;
+    color: rgba(60,60,60,1);
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    font-family: Roboto;
+    font-weight: Light;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  #buttonbackPsicologaAdolescentes {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

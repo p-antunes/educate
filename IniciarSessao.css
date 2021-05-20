@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .textIniciarSessao {
+    width: 292px;
+    color: rgb(216 214 214);
+    position: absolute;
+    top: 159px;
+    left: 25.5%;
+    font-family: Roboto;
+    font-size: 33px;
+    opacity: 1;
+    text-align: left;
+  }
+  .textForgotPassword {
+    width: 217px;
+    height: 13px;
+    color: rgba(154,154,154,1);
+    position: absolute;
+    top: 503px;
+    left: 101px;
+    font-family: Poppins;
+    font-size: 15px;
+    opacity: 1;
+    text-align: center;
+  }
+  .firstBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 228px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    overflow: hidden;
+    border: none;
+  }
+  .textEmailUsername {
+    width: 206px;
+    color: rgba(154,154,154,1);
+    position: absolute;
+    top: 233px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .secondBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 313px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    overflow: hidden;
+    border: none;
+  }
+  .textPassword {
+    width: 128px;
+    color: rgba(154,154,154,1);
+    position: absolute;
+    top: 317px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .buttonIniciar {
+    width: 230px;
+    height: 46px;
+    background: rgba(229,0,78,0.6299999952316284);
+    opacity: 1;
+    position: relative;
+    top: 417px;
+    left: 91px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    font-family: 'Poppins';
+    font-size: 21px;
+    color: whitesmoke;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .buttonImpressaoDigital {
+    width: 89px;
+    height: 80px;
+    background: rgb(229 0 78 / 40%);
+    position: absolute;
+    top: 628px;
+    left: 161px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  
+  #iconFingerPrint {
+    color: rgb(255 255 255 / 67%);
+    top: 649px;
+    left: 186px;
+    position: absolute;
+  }

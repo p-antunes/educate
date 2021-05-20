@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .titleRectangle {
+    width: 140px;
+    height: 45px;
+    background: rgb(167 160 218 / 80%);
+    opacity: 1;
+    position: absolute;
+    top: 45px;
+    left: 136px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .titleArtigos {
+    width: 202px;
+    color: rgba(19,4,112,1);
+    position: absolute;
+    top: 44px;
+    left: 106px;
+    font-family: Roboto;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  #buttonbackArtigosAdolescentes {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .textForum {
+    width: 202px;
+    color: rgba(19,4,112,1);
+    position: absolute;
+    top: 44px;
+    left: 106px;
+    font-family: Roboto;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  .rectangleArtigos {
+    width: 311px;
+    height: 61px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: relative;
+    top: 147px;
+    left: 50px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .textArtigos {
+    width: 311px;
+    color: rgba(76,76,76);
+    position: relative;
+    top: 125px;
+    left: -227px;
+    font-family: Poppins;
+    font-size: 21px;
+    opacity: 1;
+    text-align: center;
+  }
+  .rectangleSugestoes {
+    width: 311px;
+    height: 61px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: relative;
+    top: 164px;
+    left: 50px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .textSugestoes {
+    width: 311px;
+    color: rgba(76,76,76,1);
+    position: relative;
+    top: 115px;
+    left: 87px;
+    font-family: Poppins;
+    font-size: 21px;
+    opacity: 1;
+    text-align: center;
+  }
+  
+  .rectangleCriticas {
+    width: 311px;
+    height: 61px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: relative;
+    top: 156px;
+    left: 50px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .textCriticas {
+    width: 311px;
+    color: rgba(76,76,76,1);
+    position: relative;
+    top: 134px;
+    left: -227px;
+    font-family: Poppins;
+    font-weight: Regular;
+    font-size: 21px;
+    opacity: 1;
+    text-align: center;
+  }
+  

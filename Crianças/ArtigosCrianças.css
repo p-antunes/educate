@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 1586px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .titleRectangle {
+    width: 140px;
+    height: 45px;
+    background: rgba(255,198,0,0.3499999940395355);
+    opacity: 1;
+    position: absolute;
+    top: 44px;
+    left: 136px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .title {
+    width: 112px;
+    color: rgba(231,183,15,1);
+    position: absolute;
+    top: 44px;
+    left: 151px;
+    font-family: Roboto;
+    font-weight: Light;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  .text {
+    width: 356px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 114px;
+    left: 33px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    text-align: justify;
+  }
+  .textOne {
+    width: 353px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 334px;
+    left: 35px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    text-align: justify;
+  }
+  #buttonbackArtigosCrianças {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

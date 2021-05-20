@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .textForum {
+    width: 202px;
+    color: rgba(19,4,112,1);
+    position: absolute;
+    top: 44px;
+    left: 106px;
+    font-family: Roboto;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  .blueRectangle {
+    width: 145px;
+    height: 38px;
+    background: rgba(19,4,112,0.23000000417232513);
+    opacity: 1;
+    position: absolute;
+    top: 112px;
+    left: 134px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .textArtigos {
+    width: 145px;
+    color: rgba(19,4,112,1);
+    position: absolute;
+    top: 112px;
+    left: 135px;
+    font-family: Roboto;
+    font-weight: Light;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+  }
+  .firstGrayRectangle {
+    width: 335px;
+    height: 534px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: relative;
+    top: 111px;
+    left: 43px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .titleArtigo {
+    width: 284px;
+    height: 50px;
+    top: 17px;
+    left: 17px;
+    position: absolute;
+    font-family: Poppins;
+    font-size: 19px;
+    color: rgb(40 26 146 / 80%);
+  }
+  .textOne {
+    width: 284px;
+    height: 50px;
+    top: 55px;
+    left: 25px;
+    position: absolute;
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: justify;
+  }
+  #buttonbackForumCrianças {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

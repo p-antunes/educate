@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .textBot {
+    width: 100px;
+    color: rgba(174,84,205,1);
+    position: absolute;
+    top: 44px;
+    left: 159px;
+    font-family: Roboto;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  .purpleRectangle {
+    width: 100px;
+    height: 45px;
+    background: rgba(174,84,205,0.3499999940395355);
+    opacity: 1;
+    position: absolute;
+    top: 43px;
+    left: 158px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .fourthGrayRectangle {
+    width: 214px;
+    height: 40px;
+    background: rgba(232,232,232,1);
+    opacity: 1;
+    position: absolute;
+    top: 339px;
+    left: 169px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .thirdGrayRectangle {
+    width: 318px;
+    height: 85px;
+    background: rgba(232,232,232,1);
+    opacity: 1;
+    position: absolute;
+    top: 240px;
+    left: 67px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .firstGrayRectangle {
+    width: 318px;
+    height: 40px;
+    background: rgba(232,232,232,1);
+    opacity: 1;
+    position: absolute;
+    top: 135px;
+    left: 67px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .fifthGrayRectangle {
+    width: 318px;
+    height: 40px;
+    background: rgba(232,232,232,1);
+    opacity: 1;
+    position: absolute;
+    top: 393px;
+    left: 67px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .secondGrayRectangle {
+    width: 284px;
+    height: 40px;
+    background: rgba(232,232,232,1);
+    opacity: 1;
+    position: absolute;
+    top: 188px;
+    left: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  #buttonbackBotFamilias {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

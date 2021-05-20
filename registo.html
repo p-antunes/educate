@@ -1,181 +1,167 @@
-<!doctype html>
-<html lang="zxx">
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+      <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+      <link href="./Registo.css" rel="stylesheet" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div class="screen">
+        <span class="Registo">Registo</span>
+         <button class="buttonRegisto">Registo</button>
+         <input id="fourthBoxRegisto" class="fourthBox">
+            <span class="textEmail">Insere o teu email</span>
+         </input>
+         <input id="fifthBoxRegisto" class="fifthBox">
+            <span class="textBirthday">A tua data de nascimento</span>
+         </input>
+         <input id="sixthBoxRegisto" class="sixthBox">
+            <span class="textCity">A tua cidade</span>
+         </input>
+         <input id="seventhBoxRegisto" class="seventhBox">
+            <span class="textCounty">O teu conselho</span>
+         </input>
+         <input id="eighthBoxRegisto" class="eighthBox">
+            <span class="textPostalCode">O teu código de postal</span>
+         </input>
+         <input id="ninthBoxRegisto" class="ninthBox">
+            <span class="textAddress">A tua morada</span>
+         </input>
+         <input id="tenthBoxRegisto" class="tenthBox">
+            <span class="textSchool">A tua escola</span>
+         </input>
+         <input id="eleventhBoxRegisto" class="eleventhBox">
+            <span class="textChoosePassword">Escolhe uma palvra passe</span>
+         </input>
+         <input id="twelfthBoxRegisto" class="twelfthBox">
+            <span class="textConfirm">Confirmar a palavra passe</span>
+         </input>
+         <input id="secondBoxRegisto" class="secondBox">
+            <span class="textName">O teu nome</span>
+         </input>
+         <input id="firstBoxRegisto" class="firstBox">
+            <span class="text">Eu sou...</span>
+         </input>
+         <div id="anotherCombobox" class="comboboxs">
+            <label for="euSou"></label>
+            <select name="sou" id="sou">
+                <option value="criancas">Crianças</option>
+                <option value="adolescentes">Adolescentes</option>
+                <option value="familias">Famílias</option>
+                <option value="instituicoes">Instituições</option>
+            </select>
+         </div>
+         <div id="comboboxs" class="comboboxs">
+            <label for="diaDataNascimento">Dia</label>
+            <select name="dia" id="dia">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>EOC</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" id="logo" type="image/x-png" href="assets/img/logo/logo.png" />
+            <label for="mesDataNascimento">Mês</label>
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/paginainicial.css">     
+            <select name="mes" id="mes">
+          <option value="Janeiro">Janeiro</option>
+          <option value="Fevereiro">Fevereiro</option>
+          <option value="Março">Março</option>
+          <option value="Abril">Abril</option>
+          <option value="Maio">Maio</option>
+          <option value="Junho">Junho</option>
+          <option value="Julho">Julho</option>
+          <option value="Agosto">Agosto</option>
+          <option value="Setembro">Setembro</option>
+          <option value="Outubro">Outubro</option>
+          <option value="Novembro">Novembro</option>
+          <option value="Dezembro">Dezembro</option>
+            </select>
 
-    <link rel="stylesheet" href="./assets/css/form.css">
+            <label for="anoDataNascimento">Ano</label>
 
-
-    <!-- sweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-</head>
-
-<header>
-    <div class="header-area">
-        <div class="main-header header-sticky">
-            <div class="container-fluid">
-                <div class="menu-wrapper">
-                    <!-- Logo -->
-                    <div class="logo" id="reg-logo">
-                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
-                    </div>
-</header>
-
-<body class="registo_body">
-
-    <main>
-        <!--================Checkout Area =================-->
-        <!-- <section class="checkout_area section_padding"> -->
-        <div class="billing_details">
-            <div class="row">
-                <div class="col-lg-8" id="title-reg">
-                    <h2 id="title-registo">Registo</h2>
-                    <br>
-                    <form name="demo-form-1" class="row contact_form" action="#" method="post" novalidate="novalidate">
-                        <div class="col-md-12 form-group">
-                            <select id="typeUser" class="country_select form-control stringBox" name="country_select">
-                                <option value="">Selecione uma opção …</option>
-                                <option value="1">Criança</option>
-                                <option value="2">Adolescente</option>
-                                <option value="3">Família</option>
-                                <option value="4">Psicóloga</option>
-                                <option value="5">Prochild</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <input type="text" class="form-control stringBox" id="name" name="name" data-rule="required|name"
-                                style="display:none;" placeholder="Introduza o teu nome" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="text" class="form-control stringBox" id="email" name="email" data-rule="required|email"
-                                style="display:none;" placeholder="Insire o teu email" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="date" class="form-control stringBox" id="birthDay" name="birthDay" data-rule="required"
-                                style="display:none;" placeholder="Insire o teu email" />
-                        </div>
-
-                        <div class="col-md-6 form-group">
-                            <input type="text" class="form-control stringBox" id="postalCode" style="display:none;" data-rule="required"
-                                placeholder="Código-Postal" name="CodPost" pattern="^\d{4}-\d{3}?$">
-
-                        </div>
-                        <div class="col-md-6 form-group ">
-                            <input type="text" class="form-control stringBox" id="city" name="city" data-rule="required"
-                                style="display:none;" placeholder="A tua cidade" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="text" class="form-control stringBox" id="country" name="country" data-rule="required"
-                                style="display:none;" placeholder="O teu conselho" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="text" class="form-control stringBox" id="adress" name="adress" data-rule="required"
-                                style="display:none;" placeholder="Morada" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="text" class="form-control stringBox" id="phoneNr"  name="phoneNr"  data-rule="required|phone"
-                            style="display:none;" placeholder="Numero de telefone" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="password" class="form-control stringBox" id="pwd" name="pwd" data-rule="required|minlength-6"
-                                style="display:none;" placeholder="Palavra-passe" />
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="text" class="form-control stringBox" id="school" name="school" data-rule="required"
-                                style="display:none;" placeholder="A tua instituição" />
-                            <span class="placeholder"></span>
-                        </div>
-
-                        <div class="col-md-6 form-group ">
-                            <input type="password" class="form-control stringBox" id="checkPwd" name="checkPwd" data-rule="required|minlength-6"
-                                style="display:none;" placeholder="Confirmação da palavra-passe" />
-                        </div>
-
-                        <div>
-                            <br>
-                            <input type="button" class="btn_1" id="btnRegistar" value="Registar-me">
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <select name="ano" id="ano">
+          <option value="2002">2002</option>
+          <option value="2001">2001</option>
+          <option value="2000">2000</option>
+          <option value="1999">1999</option>
+          <option value="1998">1998</option>
+          <option value="1997">1997</option>
+          <option value="1996">1996</option>
+          <option value="1995">1995</option>
+          <option value="1994">1994</option>
+          <option value="1993">1993</option>
+          <option value="1992">1992</option>
+          <option value="1991">1991</option>
+          <option value="1990">1990</option>
+          <option value="1989">1989</option>
+          <option value="1988">1988</option>
+          <option value="1987">1987</option>
+          <option value="1986">1986</option>
+          <option value="1985">1985</option>
+          <option value="1084">1084</option>
+          <option value="1083">1083</option>
+          <option value="1082">1082</option>
+          <option value="1081">1081</option>
+          <option value="1080">1080</option>
+          <option value="1079">1079</option>
+          <option value="1078">1078</option>
+          <option value="1077">1077</option>
+          <option value="1076">1076</option>
+          <option value="1075">1075</option>
+          <option value="1074">1074</option>
+          <option value="1073">1073</option>
+          <option value="1072">1072</option>
+          <option value="1071">1071</option>
+          <option value="1070">1070</option>
+          <option value="1069">1069</option>
+          <option value="1068">1068</option>
+          <option value="1067">1067</option>
+          <option value="1066">1066</option>
+          <option value="1065">1065</option>
+          <option value="1064">1064</option>
+          <option value="1063">1063</option>
+          <option value="1062">1062</option>
+          <option value="1061">1061</option>
+          <option value="1060">1060</option>
+          <option value="1059">1059</option>
+          <option value="1058">1058</option>
+          <option value="1057">1057</option>
+          <option value="1056">1056</option>
+          <option value="1055">1055</option>
+            </select>
         </div>
-        </div>
-        <!-- </section> -->
-        <!--================End Checkout Area =================-->
-
-
-    </main>
-
-
-    <!-- JS here -->
-
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
-
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-
-    <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
-
-    <!-- Scroll up, nice-select, sticky -->
-    <script src="./assets/js/jquery.scrollUp.min.js"></script>
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="./assets/js/plugins.js"></script>
-
-    <!-- Validator -->
-    <script src="./assets/js/js-form-validator.js"></script>
-    <script src="./Doc/controller/functions/form.js"></script>
-    <!-- Fetch -->
-    <script type="module" src="./Doc/controller/registo.js"></script>
-
-</body>
-
+      </div>
+      <script type="text/javascript" src="registo.js"></script>
+   </body>
 </html>

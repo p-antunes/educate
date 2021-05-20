@@ -1,0 +1,427 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 1241px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .buttonConta {
+    width: 230px;
+    height: 46px;
+    background: rgb(143 185 136 / 96%);
+    opacity: 1;
+    position: relative;
+    top: 1164px;
+    left: 91px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    font-family: 'Poppins';
+    font-size: 21px;
+    color: whitesmoke;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .textConta {
+    width: 100px;
+    color: rgb(157 208 148 / 96%);
+    position: absolute;
+    top: 44px;
+    left: 159px;
+    font-family: Roboto;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  .thirdBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 180px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textUserName {
+    width: 238px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 184px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .fourthBox {
+    width: 325px;
+    height: 64px;
+    background: rgb(216 216 216);
+    opacity: 1;
+    position: absolute;
+    top: 255px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textEmail {
+    width: 139px;
+    color: rgb(158 158 158);
+    position: absolute;
+    top: 259px;
+    left: 65px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .fifthBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 330px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textBirthday {
+    width: 202px;
+    color: rgb(158 158 158);
+    position: absolute;
+    top: 334px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .sixthBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 406px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textCity {
+    width: 99px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 411px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .seventhBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 482px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textCounty {
+    width: 116px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 485px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .eighthBox {
+    width: 326px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 558px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textPostalCode {
+    width: 176px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 561px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .ninthBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 634px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textAddress {
+    width: 107px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 638px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .tenthBox {
+    width: 325px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 710px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textSchool {
+    width: 96px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 714px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .eleventhBox {
+    width: 325px;
+    height: 64px;
+    background: rgb(216 216 216);
+    opacity: 1;
+    position: absolute;
+    top: 786px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textChoosePassword {
+    width: 204px;
+    color: rgb(158 158 158);
+    position: absolute;
+    top: 789px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+  .twelfthBoxContaAdolescentes {
+    width: 326px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 899px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+    display: hidden;
+  }
+  .textConfirmContaAdolescentes {
+    width: 209px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 901px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+    display: hidden;
+  }
+  .secondBox {
+    width: 325px;
+    height: 64px;
+    background: rgb(216 216 216);
+    opacity: 1;
+    position: absolute;
+    top: 105px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+  }
+  .textName {
+    width: 90px;
+    color: rgb(158 158 158);
+    position: absolute;
+    top: 109px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+  }
+.thirteenBoxContaAdolescentes {
+    width: 326px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 976px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+    display: hidden;
+}
+.fourteenBoxContaAdolescentes {
+    width: 326px;
+    height: 64px;
+    background: rgba(239,240,246,1);
+    opacity: 1;
+    position: absolute;
+    top: 1054px;
+    left: 46px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border: none;
+    overflow: hidden;
+    display: hidden;
+}
+.textNewPasswordContaAdolescentes {
+    width: 209px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 978px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+    display: hidden;
+}
+.textConfirmNewPasswordContaAdolescentes {
+    width: 238px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 1057px;
+    left: 66px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+    display: hidden;
+}
+.textChangePassword {
+    width: 238px;
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 864px;
+    left: 159px;
+    font-family: Poppins;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+}
+.checkboxContaAdolescentes {
+    height: 28px;
+    width: 88px;
+    color: rgb(228 228 228);
+    position: absolute;
+    top: 856px;
+    left: 305px;
+    font-family: Poppins;
+    font-size: 16px;
+    opacity: 1;
+    text-align: left;
+}
+#buttonbackContaAdolescentes {
+  position: absolute;
+  top: 46px;
+  left: 32px;
+  border: none;
+  font-size: x-large;
+  color: lightgray;
+  background-color: rgba(250, 249, 249, 1);
+}
+.hidden {
+  display: none;
+}

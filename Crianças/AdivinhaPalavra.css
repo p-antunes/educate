@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 920px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .roseRectangle {
+    width: 276px;
+    height: 45px;
+    background: rgba(216,13,158,0.23000000417232513);
+    opacity: 1;
+    position: absolute;
+    top: 45px;
+    left: 71px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .textAdivinhaPalavra {
+    width: 246px;
+    color: rgba(216,14,159,1);
+    position: absolute;
+    top: 49px;
+    left: 85px;
+    font-family: Roboto;
+    font-size: 29px;
+    opacity: 1;
+    text-align: center;
+  }
+  .text {
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 117px;
+    left: 32px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    width: 350px;
+    text-align: justify;
+  }
+  .textOne {
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 186px;
+    left: 32px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    width: 350px;
+    text-align: justify;
+  }
+  .textTwo {
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 334px;
+    left: 32px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    width: 350px;
+    text-align: justify;
+  }
+  .textThree {
+    color: rgba(76,76,76);
+    position: absolute;
+    top: 479px;
+    left: 32px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    width: 350px;
+    text-align: justify;
+  }
+  .textFour {
+    color: rgb(158 158 158 / 91%);
+    position: absolute;
+    top: 629px;
+    left: 32px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    opacity: 1;
+    width: 350px;
+    text-align: justify;
+  }
+  .iconSmile {
+    max-width: 88px;
+    max-height: 256px;
+    position: absolute;
+    top: 795px;
+    left: 171px;
+  }
+  #buttonbackSopaLetras {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

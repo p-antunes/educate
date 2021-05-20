@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .textoDireitos {
+    width: 202px;
+    color: rgba(230,183,15,1);
+    position: absolute;
+    top: 34px;
+    left: 107px;
+    font-family: Roboto;
+    font-weight: Light;
+    font-size: 42px;
+    opacity: 1;
+    text-align: center;
+  }
+  .firstUnderlined {
+    width: 340px;
+    height: 26px;
+    background: rgba(220,220,219,0.4399999976158142);
+    opacity: 1;
+    position: absolute;
+    top: 127px;
+    left: 35px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;
+  }
+  .secondUnderlined {
+    width: 248px;
+    height: 26px;
+    background: rgba(219,219,219,0.4000000059604645);
+    opacity: 1;
+    position: absolute;
+    top: 155px;
+    left: 80px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;
+  }
+  .text {
+    width: 320px;
+    color: rgba(9,8,8,0.7300000190734863);
+    position: absolute;
+    top: 126px;
+    left: 47px;
+    font-family: Roboto;
+    font-weight: Light;
+    font-size: 23px;
+    opacity: 1;
+    text-align: center;
+  }
+  .firstGrayRectangle {
+    width: 311px;
+    height: 61px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: relative;
+    top: 208px;
+    left: 50px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .textVideos {
+    width: 311px;
+    color: rgba(76,76,76);
+    position: relative;
+    top: 0px;
+    left: -69px;
+    font-family: Poppins;
+    font-size: 21px;
+    opacity: 1;
+    text-align: left;
+  }
+  .secondGrayRectangle {
+    width: 311px;
+    height: 61px;
+    background: rgba(231,231,231,1);
+    opacity: 1;
+    position: relative;
+    top: 233px;
+    left: 50px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+    border: none;
+    box-shadow: -4px 4px 2px rgb(171 171 171 / 50%);
+  }
+  .textArtigos {
+    width: 311px;
+    color: rgba(76,76,76);
+    position: relative;
+    top: 0px;
+    left: -50px;
+    font-family: Poppins;
+    font-size: 21px;
+    opacity: 1;
+    text-align: center;
+  }
+  #buttonbackDireitosPsicologo {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

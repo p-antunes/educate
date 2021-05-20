@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+}
+.screen {
+  width: 414px;
+  height: 736px;
+  background: rgba(250, 249, 249, 1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.firstRectangleVideo {
+  width: 340px;
+  height: 237px;
+  background: rgba(245,244,242,1);
+  opacity: 1;
+  position: absolute;
+  top: 113px;
+  left: 38px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.secondRectangleVideo {
+  width: 340px;
+  height: 242px;
+  background: rgba(245,244,242,1);
+  opacity: 1;
+  position: absolute;
+  top: 372px;
+  left: 38px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.firstText {
+  width: 171px;
+  color: rgba(154,154,154,1);
+  position: absolute;
+  top: 578px;
+  left: 73px;
+  font-family: 'Poppins';
+  font-size: 14px;
+  opacity: 1;
+  text-align: center;
+}
+.secondText {
+  width: 111px;
+  color: rgba(154,154,154,1);
+  position: absolute;
+  top: 316px;
+  left: 71px;
+  font-family: 'Poppins';
+  font-weight: Regular;
+  font-size: 14px;
+  opacity: 1;
+  text-align: center;
+}
+.titleRectangle {
+  width: 140px;
+  height: 45px;
+  background: rgba(255,198,0,0.3499999940395355);
+  opacity: 1;
+  position: absolute;
+  top: 43px;
+  left: 136px;
+  border-top-left-radius: 31px;
+  border-top-right-radius: 31px;
+  border-bottom-left-radius: 31px;
+  border-bottom-right-radius: 31px;
+  overflow: hidden;
+}
+.title {
+  width: 112px;
+  color: rgba(231,183,15,1);
+  position: absolute;
+  top: 44px;
+  left: 151px;
+  font-family: Roboto;
+  font-weight: Light;
+  font-size: 36px;
+  opacity: 1;
+  text-align: center;
+}
+.videoUnicef {
+  top: 128px;
+  left: 51px;
+  position: absolute;
+  width: 316px;
+  height: 176px;
+}
+.videoDGS {
+  top: 388px;
+  left: 51px;
+  position: absolute;
+  width: 316px;
+  height: 176px;
+}
+#buttonbackVideosAdolescentes {
+  position: absolute;
+  top: 46px;
+  left: 32px;
+  border: none;
+  font-size: x-large;
+  color: lightgray;
+  background-color: rgba(250, 249, 249, 1);
+}

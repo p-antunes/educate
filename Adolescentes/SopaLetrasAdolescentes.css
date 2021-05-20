@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .screen {
+    width: 414px;
+    height: 736px;
+    background: rgba(250, 249, 249, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .roseRectangle {
+    width: 259px;
+    height: 45px;
+    background: rgba(216,13,158,0.23000000417232513);
+    opacity: 1;
+    position: absolute;
+    top: 45px;
+    left: 71px;
+    border-top-left-radius: 31px;
+    border-top-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+    border-bottom-right-radius: 31px;
+    overflow: hidden;
+  }
+  .textSopaLetras {
+    width: 246px;
+    color: rgba(216,14,159,1);
+    position: absolute;
+    top: 44px;
+    left: 78px;
+    font-family: Roboto;
+    font-weight: Light;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+  }
+  #buttonbackSopaLetrasAdolescentes {
+    position: absolute;
+    top: 46px;
+    left: 32px;
+    border: none;
+    font-size: x-large;
+    color: lightgray;
+    background-color: rgba(250, 249, 249, 1);
+}

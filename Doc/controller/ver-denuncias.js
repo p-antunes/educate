@@ -29,9 +29,6 @@ document.getElementById('ver-denun').addEventListener('click', function () {
 
 
 
-
-
-
 getReports()
 function getReports() {
     getData('reports').then(data => {

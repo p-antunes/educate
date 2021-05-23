@@ -1,0 +1,22 @@
+[
+    {
+        "query": "O que faço se existirem agressões físicas em minha casa?",
+        "answer": " No caso de existirem agressões, sejam elas físicas ou psicológicas, deves procurar falar com alguém de tua confiança ou denunciar a autoridades competentes."
+    },
+    {
+        "query": "O que faço se me perder em algum sitio?",
+        "answer": "Se te sentires perdido e não conseguires comunicar com os teus pais deves procurar não entrar em panico e ligar às autoridades da tua zona, dando-lhes indicações sobre o local onde estás para que eles vão ao teu encontro."
+    },
+    {
+        "query": "O que faço se vir algo a arder?",
+        "answer": "Se vires algo a arder deves ligar para os Bombeiros da tua localidade, mas caso não tenhas o seu contacto liga para o 112 que eles reencaminham a tua chamada."
+    },
+    {
+        "query": "O que faço se encontrar um animal abandonado?",
+        "answer": "Caso encontres um animal abandonado não te deves expor a ele, sendo que não sabes se este vai ter comportamentos agressivos ou não. Assim sendo deves ligar para a tua Câmara Municipal de maneira a que estes ativem os responsáveis por estes casos."
+    },
+    {
+        "query": "O que faço se me aleijar ?",
+        "answer": "No caso de te magoares e não teres nenhum adulto por perto deves ligar para o 112 e explicar a situação, nunca desligues o telemóvel antes da chamada acabar."
+    }
+]

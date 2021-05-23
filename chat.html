@@ -31,145 +31,29 @@
   <link rel="stylesheet" href="assets/css/nice-select.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/paginainicial.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
-<style>
-  div {
-    width: 100%;
-    height: auto;
-    float: left;
-  }
-</style>
-
 <body>
-  <!-- Side-Nav -->
-  <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column " id="sidebar">
 
-    <ul class="nav flex-column w-100">
-      <a href="menu_child.html" id="logoChat"><img src="assets/img/logo/logo.png" width="50px" height="50px" alt=""></a>
 
-      <a id="menu-btn">
-        <svg id="backChat" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-          class="bi bi-chevron-right" viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-        </svg>
-      </a>
 
-      <div href="#" class="nav-link h3 my-2">
-        CHAT
-      </div>
 
-      <li href="#" class="nav-link">
-        <i class="bx bxs-dashboard"></i>
-        <span class="mx-2">Bot</span>
-      </li>
-      <li href="#" class="nav-link">
-        <i class="bx bx-user-check"></i>
-        <span class="mx-2">Psicóloga</span>
-      </li>
-    </ul>
+  <img src="assets/img/hero/chat.png" width="500px" alt="">
 
+
+  <div class="container" >
+    <div id="bot" ></div>
   </div>
 
-  <!-- Main Wrapper -->
-  <div class="p-1 my-container active-cont">
-    <!-- Top Nav -->
-    <!-- <nav class="navbar top-navbar navbar-light bg-light px-5">
-      <a class="btn border-0" id="menu-btn"><i class="bx bx-menu"></i></a>
-    </nav> -->
-
-    <img src="assets/img/hero/chat.png" width="500px" alt="">
-
-
-
-    <div class="p-1 my-containe active-cont">
-      <div class="header-area">
-        <div class="main-header header-sticky">
-          <div class="container-fluid">
-            <div class="menu-wrapper">
 
 
 
 
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="chat_container">
-        <div class="message_holder">
-          <span class="chat user1">
-            Oláaaaa!
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user2">
-            Olá amigo <br />
-            Como estás?
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user1">
-            Bem e tu?
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user2">
-            Muito bem também, obrigada
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user1">
-          Como foi o teu dia?
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user2">
-           Fantástico! Fui ao cinema. <br />
-            E o teu?
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user1">
-            Eu fui ao ginásio com a Maria.
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user2">
-            Uau, que bem.
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user1">
-           Tem o resto de um bom dia.
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user2">
-           Tu também colega.
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user1">
-           Obrigada Inácio.
-          </span>
-        </div>
-        <div class="message_holder">
-          <span class="chat user2">
-            De nada André.
-          </span>
-        </div>
-       
 
-      <form method="post">
-        <input type="text" name="mensagem" id="mensagem" placeholder="  Digite sua mensagem..." maxlength="100"
-          autocomplete="off" />
-        <a href=""><img src="assets/img/hero/send.png" id="send" alt=""></a>
-      </form>
-
-    </div>
-  </div>
 
 </body>
 
@@ -212,6 +96,7 @@
 <script src="./assets/js/plugins.js"></script>
 <script src="./assets/js/main.js"></script>
 
+<script src="./Doc/controller/chat.js"></script>
 </body>
 
 </html>

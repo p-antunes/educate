@@ -1552,5 +1552,16 @@ top:30px;
 }
 
 
+/* Bots */
 
+.questions{
+    width: 80%;
+    background-color: #E7E7E7;
+    height: 50px;
+    border-radius: 40px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
 

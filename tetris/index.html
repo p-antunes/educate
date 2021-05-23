@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
 <body>
-    
+    <a id="menu"><img src="../assets/img/logo/logo.png" id="logo" alt=""></a>
+
+
+    <script>
+        document.getElementById('menu').addEventListener("click", e => {
+        TypeOfUserPage(sessionStorage.getItem('role'))
+        })
+
+        function TypeOfUserPage(type) {
+            switch (type) {
+                case "ROLE_CHILD": window.location.replace("../menu_child.html")
+                    break;
+                case "ROLE_TEENAGER": window.location.replace("../menu-adolescente.html")
+                    break;
+                case "ROLE_FAMILY": window.location.replace("../menu-familias.html")
+                    break;
+                case "ROLE_PROCHILDCOLLAB": window.location.replace("../menu-prochild.html")
+                    break;
+                case "ROLE_PSYCHOLOGIST": window.location.replace("../menu-psicologa.html")
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
 </body>
-    <script src="./script.js"></script>
+<script src="./script.js"></script>
+
 </html>
-
-

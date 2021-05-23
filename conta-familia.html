@@ -1,4 +1,4 @@
-<!doctype html>
+readonly<!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/paginainicial.css">
+
+   <script src="./Doc/controller/functions/sweetAlert2.js"></script>
 </head>
 
 <body>
@@ -82,47 +84,47 @@
 
                 <div class="col-md-6 form-group">
                     <input type="text" class="form-control inputBorder" id="name" name="name"
-                        placeholder="Introduz o teu nome" />
+                        placeholder="Introduz o teu nome" readonly/>
                 </div>
 
                 <div class="col-md-6 form-group ">
                     <input type="text" class="form-control inputBorder" id="email1" name="email"
-                        placeholder="Insire o teu email" />
+                        placeholder="Insire o teu email"readonly />
                 </div>
 
                 <div class="col-md-6 form-group">
-                    <input type="date" class="form-control inputBorder" id="birthDay" name="birthDay" />
+                    <input type="date" class="form-control inputBorder" id="birthDay" name="birthDay" readonly/>
 
                 </div>
                 <div class="col-md-6 form-group ">
                     <input type="text" class="form-control inputBorder" id="city" name="city"
-                        placeholder="A tua cidade" />
+                        placeholder="A tua cidade" readonly/>
                 </div>
 
                 <div class="col-md-6 form-group ">
                     <input type="text" class="form-control inputBorder" id="country" name="country"
-                        placeholder="O teu conselho" />
+                        placeholder="O teu conselho"readonly />
                 </div>
 
                 <div class="col-md-6 form-group ">
                     <input type="text" class="form-control inputBorder" id="postalCode" name="postalCode"
-                        placeholder="A teu codigo postal" />
+                        placeholder="A teu codigo postal"readonly />
                     <span class="placeholder"></span>
                 </div>
 
                 <div class="col-md-12 form-group ">
                     <input type="text" class="form-control inputBorder" id="phoneNr" name="phoneNr"
-                        placeholder="A teu numero de telefone" />
+                        placeholder="A teu numero de telefone"readonly />
                     <span class="placeholder"></span>
                 </div>
 
                 <div class="col-md-6 form-group ">
-                    <input type="password" class="form-control inputBorder" id="pwd" name="pwd"
+                    <input type="password" class="form-control inputBorder" id="pwd" name="pwd" style="display: none;"
                         placeholder="Palavra-passe" />
                 </div>
 
                 <div class="col-md-6 form-group ">
-                    <input type="password" class="form-control inputBorder" id="checkPwd" name="checkPwd"
+                    <input type="password" class="form-control inputBorder" id="checkPwd" name="checkPwd" style="display: none;"
                         placeholder="Confirmação da palavra-passe" />
                 </div>
                 <div class="toggle-btn">
@@ -132,7 +134,8 @@
                 </div>
 
                 <div>
-                    <button id="confirm" class="btn_2"><span class="confirmarAlte">Confirmar Alterações</span></button>
+                    <input id="confirm" class="btn_2" value="Confirmar Alterações"></input>
+
                 </div>
             </form>
         </div>

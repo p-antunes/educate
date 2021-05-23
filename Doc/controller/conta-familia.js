@@ -6,6 +6,17 @@ import * as fetch from "./functions/fetch.js"
 const $ = q => {
     return document.querySelector(q);
   };
+
+
+  const show = q => {
+    $(q).style.display = 'block';
+  };
+  
+  const hide = q => {
+    $(q).style.display = 'none';
+  };
+  
+
   
   fetch.getData('families/' + sessionStorage.getItem("id_user")).then(data => {
     console.log(data)
@@ -44,4 +55,34 @@ const $ = q => {
     }
   });
 
+
+  $('#confirm').addEventListener('click', function() {
+    changePwd().then(response => {
+      console.log(response)
+      if(response.ok) {
+        Swal.fire(
+          'Password mudado com sucesso!',
+          '',
+          'success'
+      )
+      } else {
+        Swal.fire(
+          'Não foi possivel alterar a password!',
+          '',
+          'error'
+      )
+      }
+    })
+  })
+  
+  
+  
+  const changePwd = async() => {
+    let newPassword = {
+      "password": $('#pwd').value,
+      "confirmPassword": $('#checkPwd').value
+  }
+    const response = await fetch.postData('family/' + sessionStorage.getItem('id_user') + '/password', newPassword);
+    return response;
+  }
 

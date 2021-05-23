@@ -46,7 +46,7 @@ function getDateFormat(date) {
 $('#toggle-btn-1').addEventListener('change', function () {
   if (this.checked) {
     $('#pwd').value = "";
-    $('#checkPwd').value ="";
+    $('#checkPwd').value = "";
     show('#pwd')
     show('#checkPwd')
   } else {
@@ -55,4 +55,32 @@ $('#toggle-btn-1').addEventListener('change', function () {
   }
 });
 
+$('#confirm').addEventListener('click', function () {
+  changePwd().then(response => {
+    console.log(response)
+    if (response.ok) {
+      Swal.fire(
+        'Password mudado com sucesso!',
+        '',
+        'success'
+      )
+    } else {
+      Swal.fire(
+        'Não foi possivel alterar a password!',
+        '',
+        'error'
+      )
+    }
+  })
+})
 
+
+
+const changePwd = async () => {
+  let newPassword = {
+    "password": $('#pwd').value,
+    "confirmPassword": $('#checkPwd').value
+  }
+  const response = await fetch.postData('psychologists/' + sessionStorage.getItem('id_user') + '/password', newPassword);
+  return response;
+}

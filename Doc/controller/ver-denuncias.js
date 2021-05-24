@@ -29,6 +29,7 @@ document.getElementById('ver-denun').addEventListener('click', function () {
 
 
 
+
 getReports()
 function getReports() {
     getData('reports').then(data => {
@@ -85,3 +86,4 @@ async function getData(route) {
     const data = await response.json();
     return data;
 }
+

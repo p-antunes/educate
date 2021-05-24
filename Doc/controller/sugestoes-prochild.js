@@ -87,7 +87,7 @@ function getSuggestions() {
     <table class="table table-bordered supTable" id="Table-denun" width="100%"  cellspacing="0" data-page-length='-1'>
         <thead>
             <tr>
-                <th>ID</th>
+                <th style="display:none" >ID</th>
                 <th>Titulo</th>
                 <th>Nome</th>
                 <th>Contacto</th>
@@ -101,7 +101,7 @@ function getSuggestions() {
         for (let i = 0; i < data.length; i++) {
             txt += `
             <tr>
-                <td>${data[i].idSuggestion}</td>
+                <td style="display:none">${data[i].idSuggestion}</td>
                 <td>${data[i].title}</td>
                 <td>${data[i].name}</td>
                 <td>${data[i].phoneNr}</td>

@@ -12,7 +12,8 @@ fetch.getData('videorights').then(data => {
         console.log(data[i].linkVideo)
     txt += `<div class="col-md-6 form-group">
         <div><iframe width="420" height="315"
-            src='${data[i].linkVideo}'></iframe></div>
+            src='${data[i].linkVideo}'></iframe>
+            </div>
         </div>`;
 
     }

@@ -4,76 +4,117 @@ const $ = q => {
     return document.querySelector(q);
 };
 
-
-getMateriais()
-
-function getMateriais() {
-    fetch.getData('files').then(data => {
-        console.log(data);
-        let txt = ''
-        for (let i = 0; i < data.length; i++) {
-            console.log(data[i])
-            console.log(addAPIToUrl(data[i]))
-            let img = addAPIToUrl(data[i])
-
-            txt += '<div class="col-md-6"><img width="500" style="margin:10px; border-radius:10px;" src="' + img + '"></div>'
-        }
-        console.log(txt)
+const show = q => {
+    $(q).style.display = 'block';
+};
 
 
-        $('#images').innerHTML = txt;
-    });
+const data = async () => {
+    let data = await fetch.getData('files');
+    return data;
 }
 
+async function putMaterials(data) {
+    // console.log(data);
+    let txt = ''
+    for (let i = 0; i < data.length; i++) {
+        // console.log(data[i])
+        // console.log(addAPIToUrl(data[i]))
+        let img = addAPIToUrl(data[i])
+        txt += `<div  class="col-md-6"><img id="material${i}" width="500" style="margin:10px; border-radius:10px;" src="${img}"></div>`
+    }
+    // console.log(txt)
+    $('#images').innerHTML = txt;
+}
 
+async function associateIdMaterial(data) {
+    for (let i = 0; i < data.length; i++) {
+        $(`#material${i}`).addEventListener('click', function () {
+            sessionStorage.setItem('id_material', i)
+        });
+    }
+}
+const getMateriais = async () => {
+    let materials = await data()
+    console.log(await data())
+    await putMaterials(materials)
+    await associateIdMaterial(materials)
+}
 
-
-
-$('#file').addEventListener("change", function () {
-    console.log($('#file').files);
-})
-
-
+getMateriais()
 
 
 $('#addFile').addEventListener("click", e => {
 
     e.preventDefault();
 
-    const formData = new FormData();
-
-    console.log($('#file').files);
-
-    formData.append("file", $('#file').files[0]);
-
-    fetch.postFile('upload', formData).then(response => {
-        if (response.ok) {
-            Swal.fire(
-                'Material adicionado com successo',
-                '',
-                'success'
-            ).then((result) => {
-                if (result.value) {
-                    getMateriais()
-                }
+    Swal.fire({
+        title: 'Adicionar material',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        html: `<label class="custom-file-upload">
+        <input id="file" type="file"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload"
+            viewBox="0 0 16 16">
+            <path
+                d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+            <path
+                d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
+        </svg> Upload do material
+        </label><div class="container"><img id="imageSwl" src="" alt="your image" width=180px;
+        style="display:none"/></div>`,
+        didOpen: () => {
+            console.log($('#file'))
+            $('#file').addEventListener("change", function () {
+                readURL(this)
             })
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Adicionar',
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#130470',
+        showLoaderOnConfirm: true,
+        preConfirm: async () => {
+            if ($('#file') == null) {
+                Swal.fire(
+                    'É necessario escolher um material!',
+                    '',
+                    'error'
+                )
+            } else {
+                let response = await addFile();
+                console.log(response)
 
-        } else {
-            Swal.fire(
-                'Não foi possível adicionar o material',
-                '',
-                'error'
-            )
+                if (response.ok) {
+                    Swal.fire(
+                        'Material adicionado com sucesso!',
+                        '',
+                        'success'
+                    ).then((result) => {
+                        if (result.value) {
+                            getMateriais()
+                        }
+                    })
+                } else {
+                    Swal.fire(
+                        'Não foi possivel adicionar o material!',
+                        '',
+                        'error'
+                    )
+                }
+            }
         }
-    })
+    });
 })
 
 $('#remover-mat').addEventListener("click", e => {
-    let url = "http://localhost:8080/files/945663e4-0c87-41f1-af58-2d56a77f710a"
+    let id_material = sessionStorage.getItem('id_material')
+    let url = $(`#material${id_material}`).src;
     let id = getIDMateriais(url)
     e.preventDefault();
-    fetch.deleteData('files/' + id).then(data => {
-        if (data.ok) {
+    fetch.deleteData('files/' + id).then(response => {
+        if (response.ok) {
             Swal.fire(
                 'Material eliminado com successo',
                 '',
@@ -101,5 +142,29 @@ function addAPIToUrl(obj) {
 
 
 function getIDMateriais(url) {
-    return url.substring(28,);
+    return url.substring(32,);
+}
+
+const addFile = async () => {
+    const formData = new FormData();
+
+    console.log($('#file').files);
+
+    formData.append("file", $('#file').files[0]);
+    const response = fetch.postFile('upload', formData);
+    return response;
+}
+
+function readURL(input) {
+    show('#imageSwl')
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imageSwl')
+                .setAttribute('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }

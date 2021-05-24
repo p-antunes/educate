@@ -44,7 +44,7 @@ document.getElementById('delete-critica').addEventListener('click', function () 
             showLoaderOnConfirm: true,
             preConfirm: () => {
                 let id = sessionStorage.getItem('id_complaint');
-                deleteData('suggestions/' + id).then(response => {
+                deleteData('complaints/' + id).then(response => {
                     console.log(response.ok)
                     if (response.ok) {
                         Swal.fire(
@@ -120,7 +120,7 @@ function getSuggestions() {
             
             $(this).addClass('selected').siblings().removeClass('selected');
             var id = $(this).find('td:first').html();
-            sessionStorage.setItem('id_suggestion', id)
+            sessionStorage.setItem('id_complaint', id)
         });
     })
 
@@ -150,7 +150,6 @@ async function deleteData(route) {
         method: 'DELETE',
     })
     console.log(response)
-    const res = await response.json();
-    console.log(res)
-    return res;
+   
+    return response;
 }

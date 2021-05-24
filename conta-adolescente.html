@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/paginainicial.css">
+
+    <link rel="stylesheet" href="./assets/css/form.css">
+    <script src="./Doc/controller/functions/sweetAlert2.js"></script>
 </head>
 
 <body>
@@ -79,7 +82,7 @@
         </div>
         <div class="col-lg-8" id="title-reg">
 
-            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+            <form name="demo-form-1" class="row contact_form" action="#" method="post" novalidate="novalidate">
 
                 <div class="col-md-6 form-group">
                     <input type="text" class="form-control inputBorder" id="name" name="name"
@@ -129,12 +132,12 @@
                 </div>
 
                 <div class="col-md-6 form-group ">
-                    <input type="password" class="form-control inputBorder" id="pwd" name="pwd" style="display:none"
+                    <input type="password" class="form-control inputBorder" id="pwd" name="pwd" style="display:none" data-rule="required|minlength-6"
                         placeholder="Palavra-passe" />
                 </div>
 
                 <div class="col-md-6 form-group ">
-                    <input type="password" class="form-control inputBorder" id="checkPwd" name="checkPwd" style="display:none"
+                    <input type="password" class="form-control inputBorder" id="checkPwd" name="checkPwd" style="display:none" data-rule="required|minlength-6"
                         placeholder="Confirmação da palavra-passe" />
                 </div>
 
@@ -196,6 +199,9 @@
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 
+    <!-- Validator -->
+    <script src="./assets/js/js-form-validator.js"></script>
+    <script src="./Doc/controller/functions/form.js"></script>
     
     <!-- fetch -->
     <script type="module" src="./Doc/controller/conta-adolescentes.js"></script>
